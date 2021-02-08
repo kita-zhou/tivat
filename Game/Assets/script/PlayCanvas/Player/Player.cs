@@ -711,8 +711,7 @@ public class Player : MonoBehaviour//玩家类
     public bool TryGetEnemy(Vector2Int pos, out Hero hero)
     {
         hero = null;
-        pos.x = 7 - pos.x;
-        pos.y = 7 - pos.y;
+        pos = BattleArea.GetReverse(pos);
         Character[] characters = GetEnemyCharacters();
         foreach(Character character in characters)
         {
@@ -883,7 +882,7 @@ public class Player : MonoBehaviour//玩家类
             Hero hero1 = character as Hero;
             if(hero1.heroType == HeroType.Sword)
             {
-                hero1.TryNormalAttack(new Vector2Int(7, 7) - hero.position - hero1.position);
+                hero1.TryNormalAttack(BattleArea.GetReverse(hero.position + hero1.position));
             }
         }
         return true;

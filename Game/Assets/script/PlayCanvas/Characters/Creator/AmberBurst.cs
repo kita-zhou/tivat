@@ -31,6 +31,7 @@ public class AmberBurst : Creator
     public void newRound()
     {
         remainTime--;
+        ShowNormalState();
         amber.BurstBurn(burnPos);
         if (remainTime < 1)
         {
@@ -48,17 +49,5 @@ public class AmberBurst : Creator
         burnPos = new Vector2Int(msg[pos++], msg[pos++]);
         remainTime = msg[pos++];
         return pos;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -519,7 +519,7 @@ public class Character : GameBase
     public static void Swirl(Character target, Attack atkack)//扩散反应, 给自己和周围1个单位以内的角色附加元素
     {
         ElementType type = target.affected.affectElemental;
-        Vector2Int pos =new Vector2Int(7,7)-  target.position;
+        Vector2Int pos =BattleArea.GetReverse(target.position);
         void Creat(Vector2Int position)
         {
             GameObject obj = Attack.CreatObject<Attack>(atkack.parent);
@@ -574,7 +574,7 @@ public class Character : GameBase
 
     public static void Overloaded(Character Target, Attack attack)//超载反应，自己以及周围一格所有角色受到1元素反应伤害
     {
-        Vector2Int pos =new Vector2Int(7,7) - Target.position;
+        Vector2Int pos =BattleArea.GetReverse(Target.position);
         void Creat(Vector2Int position)
         {
             GameObject obj = CreatObject<ElementalReaction>(attack.parent);
@@ -906,7 +906,7 @@ public class Character : GameBase
     {
         float dis(Character character, Vector2Int position)
         {
-            return (new Vector2Int(7,7)- character.position - position).sqrMagnitude;
+            return (BattleArea.GetReverse( character.position + position)).sqrMagnitude;
         }
         int lenth = old.Length;
         Character[] sorted = new Character[lenth];
@@ -979,7 +979,7 @@ public class Character : GameBase
 
     public virtual void KickBack(Vector2Int EnemyPos, int num)
     {
-        EnemyPos = new Vector2Int(7, 7) - EnemyPos;
+        EnemyPos = BattleArea.GetReverse(EnemyPos);
         Vector2Int target = new Vector2Int(position.x,position.y);
         if (EnemyPos.y > position.y) target.y -= num;
         else if (EnemyPos.y < position.y) target.y += num;

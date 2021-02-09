@@ -223,7 +223,7 @@ public class Amber : Hero
                 GameObject obj = CreatObject<Attack>(parent);
                 Attack atk = obj.GetComponent<Attack>();
                 atk.Initial(new Vector2Int(i, j) + pos, 1, AttackType.ElementalBurst, ElementType.Pyro, this);
-                atk.transform.position = new Vector3(pos.x - 3.5f + i, pos.y - 3.5f + j, -1);
+                atk.transform.position = BattleArea.GetLocalPosition(pos);
             }
         }
     }

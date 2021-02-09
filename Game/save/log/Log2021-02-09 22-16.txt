@@ -1,0 +1,2 @@
+ 玩家:  使用了卡  #+Character_Keqing
+ 玩家:  使用了卡  #+Normal_Electro+Normal_Attack

@@ -1,0 +1,4 @@
+ 玩家:  使用了卡  #+Character_Keqing
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 玩家:  使用了卡  #+Normal_Attack+Normal_Electro

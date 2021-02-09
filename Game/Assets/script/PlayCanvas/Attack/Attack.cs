@@ -55,7 +55,7 @@ public class Attack : GameBase//攻击类
         attackelemental = eleTyp;
         attackOwner = owner;
         active = false;
-        transform.localPosition = owner.transform.localPosition;
+        gameObject.transform.position = owner.transform.position;
     }
     private void Update()
     {
@@ -64,9 +64,7 @@ public class Attack : GameBase//攻击类
         Vector3 dis = tar - transform.localPosition;
         if (dis.sqrMagnitude > 0.001)
         {//如果没到目的地，则运动
-            float delta = Time.deltaTime;
-            dis *= speed * delta;
-            transform.localPosition += dis;
+            transform.localPosition = Vector3.MoveTowards(transform.localPosition, tar, speed * Time.deltaTime);
         }
         else
         {

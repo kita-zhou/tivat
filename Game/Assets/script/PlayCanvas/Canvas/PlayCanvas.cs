@@ -510,10 +510,10 @@ public class PlayCanvas : MonoBehaviour
             ChangeMessage("服务器出错，请退出重试");
         }
          /*if (ReadFile(out string[] str, "save/build/select")) InitPlayer(str, str);
-         player.GetComponent<Player>().hand.GetComponent<Hand>().GetCard("Normal_Burst");
+         player.GetComponent<Player>().hand.GetComponent<Hand>().GetCard("Normal_Attack");
          player.GetComponent<Player>().hand.GetComponent<Hand>().GetCard("Normal_Electro");
          player.GetComponent<Player>().hand.GetComponent<Hand>().GetCard("Item_Clock");
-         player.GetComponent<Player>().hand.GetComponent<Hand>().GetCard("Normal_Geo");
+         player.GetComponent<Player>().hand.GetComponent<Hand>().GetCard("Normal_Attack");
         /*enemyPlayer.GetComponent<Player>().hand.GetComponent<Hand>().GetCard("Normal_Burst");
         enemyPlayer.GetComponent<Player>().hand.GetComponent<Hand>().GetCard("Normal_Pyro");
         enemyPlayer.GetComponent<Player>().hand.GetComponent<Hand>().GetCard("Item_Clock");

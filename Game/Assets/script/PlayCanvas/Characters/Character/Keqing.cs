@@ -102,7 +102,7 @@ public class Keqing : Hero
         MoveTo(targ);
         Vector2 dis = pos;
         dis.Normalize();
-        transform.localPosition = new Vector3(targ.x - 3.5f-dis.x*0.5f, targ.y - 3.5f-dis.y*0.5f, -1);
+        transform.localPosition = BattleArea.GetLocalPosition(targ)- new Vector3( dis.x*0.5f,dis.y*0.5f);
         CreateAttack(new Vector2Int(1, 0), 1, AttackType.ElementalSkill, ElementType.Electro);
         CreateAttack(new Vector2Int(-1, 0), 1, AttackType.ElementalSkill, ElementType.Electro);
         CreateAttack(new Vector2Int(0, 1), 1, AttackType.ElementalSkill, ElementType.Electro);

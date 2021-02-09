@@ -520,7 +520,7 @@ public class Character : GameBase
     {
         ElementType type = target.affected.affectElemental;
         Vector2Int pos =BattleArea.GetReverse(target.position);
-        void Creat(Vector2Int position)
+        GameObject Creat(Vector2Int position)
         {
             GameObject obj = Attack.CreatObject<Attack>(atkack.parent);
             Attack atk = obj.GetComponent<Attack>();
@@ -531,12 +531,13 @@ public class Character : GameBase
             atk.attackOwner = obj.GetComponent<Character>();
             atk.speed = 10;
             atk.active = false;
+            return obj;
         }
 
         for(int i = -1; i < 2; i++)
             for(int j = -1; j < 2; j++)
             {
-                Creat(pos + new Vector2Int(i, j));
+                Creat(pos + new Vector2Int(i, j)).transform.localPosition = BattleArea.GetLocalPosition(pos);
             }
         target.affected = null;
     }
@@ -575,7 +576,7 @@ public class Character : GameBase
     public static void Overloaded(Character Target, Attack attack)//超载反应，自己以及周围一格所有角色受到1元素反应伤害
     {
         Vector2Int pos =BattleArea.GetReverse(Target.position);
-        void Creat(Vector2Int position)
+        GameObject Creat(Vector2Int position)
         {
             GameObject obj = CreatObject<ElementalReaction>(attack.parent);
             ElementalReaction atk = obj.GetComponent<ElementalReaction>();
@@ -586,12 +587,13 @@ public class Character : GameBase
             atk.attackOwner = obj.GetComponent<Character>();
             atk.speed = 10;
             atk.active = false;
+            return obj;
         }
 
         for (int i = -1; i < 2; i++)
             for (int j = -1; j < 2; j++)
             {
-                Creat(pos + new Vector2Int(i, j));
+                Creat(pos + new Vector2Int(i, j)).transform.localPosition = BattleArea.GetLocalPosition(pos);
             }
         Target.affected = null;
     }
@@ -760,12 +762,13 @@ public class Character : GameBase
         Vector3 target = BattleArea.GetLocalPosition(position);
         target.z = -1;
         Vector3 dir = target - gameObject.transform.localPosition;
-        if (dir.sqrMagnitude > 0.001)
+        if (dir.sqrMagnitude > 0.01)
         {
             gameObject.transform.localPosition += dir * Time.deltaTime*10;
         }
         else
         {
+             gameObject.transform.localPosition = target;
             IsMoving = false;
             NormalEffectsPerFrame.Remove("Moving");
         }

@@ -9,6 +9,8 @@ public class Noelle: Hero
     {
         if (Inited) return;
         Inited = true;
+        MaxFreeMove = 2;
+        FreeMoveCount = 2;
         Initial("Character_Noelle", 4, 2);
         heroType = HeroType.Claymore;
         element = ElementType.Geo;

@@ -8,6 +8,8 @@ public class Keqing : Hero
     {
         if (Inited) return;
         Inited = true;
+        MaxFreeMove = 2;
+        FreeMoveCount = 2;
         Initial("Character_Keqing", 4, 1);
         heroType = HeroType.Sword;
         element = ElementType.Electro;

@@ -15,7 +15,8 @@ public class Jean : Hero
         if (Inited) return;
         Inited = true;
         Initial("Character_Jean",6,0);
-
+        MaxFreeMove = 2;
+        FreeMoveCount = 2;
         heroType = HeroType.Sword;
         element = ElementType.Anemo;
 

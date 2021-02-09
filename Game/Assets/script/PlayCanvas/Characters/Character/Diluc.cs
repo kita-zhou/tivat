@@ -9,6 +9,8 @@ public class Diluc : Hero
         if (Inited) return;
         Inited = true;
         Initial("Character_Diluc", 5, 1);
+        MaxFreeMove = 2;
+        FreeMoveCount = 2;
         heroType = HeroType.Claymore;
         element = ElementType.Pyro;
 

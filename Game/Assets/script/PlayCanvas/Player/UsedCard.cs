@@ -53,7 +53,6 @@ public class UsedCard : GameBase
                     if (dis.sqrMagnitude > 0.001)
                     {
                         float delta = Time.deltaTime;
-                        dis.Normalize();
                         dis *= speed * delta;
                         transform.localPosition += dis;
                     }

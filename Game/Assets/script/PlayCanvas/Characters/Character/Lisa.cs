@@ -96,13 +96,13 @@ public class Lisa : Hero
     {
         if(atk.attackOwner==this && atk.type == AttackType.ChargedAttack)
         {
-            Vector2Int pos = new Vector2Int(7, 7)- atk.attackTarget.position;
+            Vector2Int pos = BattleArea.GetReverse( atk.attackTarget.position);
             Character[] characters = parent.GetComponent<Player>().GetEnemyCharacters();
             bool getPos=false;
             Vector2Int targ = new Vector2Int(0,0);
             foreach(Character character in characters)
             {
-                Vector2Int tpos =new Vector2Int(7,7)- character.position;
+                Vector2Int tpos =BattleArea.GetReverse( character.position);
                 if ((tpos - pos).sqrMagnitude <= 2.4f  && (tpos - pos).sqrMagnitude>0.2f)
                 {
                     getPos = true;

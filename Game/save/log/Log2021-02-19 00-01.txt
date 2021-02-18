@@ -1,0 +1,11 @@
+ 玩家:  使用了卡  #+Character_Keqing
+ 玩家:  使用了卡  #+Character_Lisa
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+=====================对方回合======================
+当前手牌：#+Character_Lisa+Character_Keqing+Character_Amber+Character_Diluc+Normal_Pyro+Normal_Burst
+ 敌方玩家:  使用了卡  #+Character_Amber
+ 敌方玩家:  使用了卡  #+Character_Keqing
+ 敌方玩家:  使用了卡  #+Character_Lisa

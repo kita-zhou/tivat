@@ -25,6 +25,7 @@ public class BattleArea : MonoBehaviour
         fonts = GameObject.Find("Fonts").GetComponent<AllFonts>();
         player = playerObject.GetComponent<Player>();
         enemy = enemyPlayerObject.GetComponent<Player>();
+        battleArea = this;
     }
 
     public void PlayerInitial(GameObject player,string[] set)//初始化玩家类
@@ -64,6 +65,8 @@ public class BattleArea : MonoBehaviour
     public static AllFonts fonts;
     public static Player player;
     public static Player enemy;
+
+    public static BattleArea battleArea;
 
     public GameObject selectButton=null;
 
@@ -399,20 +402,21 @@ public class BattleArea : MonoBehaviour
         return (playerObject.GetComponent<Player>().MyHash() + enemyPlayerObject.GetComponent<Player>().MyHash())%(uint)1000000;
     }
 
-    public GameObject ShowMessage(string msg, Vector3 localPos, float scale = 0.01f, float liveTime = 0.5f)
+    public static GameObject ShowMessage(string msg, Vector3 localPos, float scale = 0.01f, float liveTime = 0.5f)
     {
-        return Massage.CreateMsg(msg, localPos, gameObject, scale, liveTime);
+        return Massage.CreateMsg(msg, localPos, battleArea.gameObject, scale, liveTime);
     }
-    public GameObject ShowMessage(string msg, Vector3 localPos, Color color, float scale = 0.01f, float liveTime = 0.5f)
+    public static GameObject ShowMessage(string msg, Vector3 localPos, Color color, float scale = 0.01f, float liveTime = 0.5f)
     {
-        GameObject obj = Massage.CreateMsg(msg, localPos, gameObject, scale, liveTime);
-        obj.GetComponent<Text>().color = color;
+        GameObject obj = Massage.CreateMsg(msg, localPos, battleArea.gameObject, scale, liveTime);
+        obj.GetComponent<TMPro.TextMeshPro>().color = color;
         return obj;
     }
-    public GameObject ShowImage(Sprite img, Vector3 localPos, float scale = 1, float liveTime = 0.5f)
+    public static GameObject ShowImage(Sprite img, Vector3 localPos, float scale = 1, float liveTime = 0.5f)
     {
-        return Massage.CreateMsg(img, localPos, gameObject, scale, liveTime);
+        return Massage.CreateMsg(img, localPos,battleArea.gameObject, scale, liveTime);
     }
+
 
     public void ExitGame()
     {
@@ -422,13 +426,13 @@ public class BattleArea : MonoBehaviour
     public void Defeat()
     {
         Send("AD");
-        ShowMessage("Defeat", new Vector3(4, 0, -1), new Color(1, 0.5f, 0), 0.06f, 2);
+        ShowMessage("Defeat", new Vector3(4, 0, -1), new Color(1, 0.5f, 0), 0.6f, 2);
         Invoke("ExitGame", 2);
     }
 
     public void Win()
     {
-        ShowMessage("Win", new Vector3(4, 0, -1), new Color(1,0.5f,0),0.06f, 2);
+        ShowMessage("Win", new Vector3(4, 0, -1), new Color(1,0.5f,0),0.6f, 2);
         Invoke("ExitGame", 2);
     }
 }//战斗区域类

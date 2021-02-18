@@ -1,0 +1,13 @@
+=====================对方回合======================
+ 玩家:  使用了卡  #+Character_Keqing
+ 敌方玩家:  使用了卡  #+Character_Keqing
+ 玩家:  使用了卡  #+Character_Lisa
+ 敌方玩家:  使用了卡  #+Character_Lisa
+=====================对方回合======================
+当前手牌：#+Character_Noelle+Character_Ningguang+Character_Lisa+Character_Keqing+Normal_Electro+Item_Sunsettia
+=====================我的回合======================
+当前手牌：#+Character_Noelle+Character_Ningguang+Character_Lisa+Character_Keqing+Normal_Electro+Item_Sunsettia
+ 玩家:  使用了卡  #+Character_Lisa
+ 敌方玩家:  使用了卡  #+Character_Lisa
+ 玩家:  使用了卡  #+Character_Noelle
+ 敌方玩家:  使用了卡  #+Character_Noelle

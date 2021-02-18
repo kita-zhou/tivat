@@ -1,0 +1,43 @@
+ 玩家:  使用了卡  #+Character_Keqing
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 玩家:  使用了卡  #+Character_Ningguang
+ 我方 Character_Ningguang 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+=====================对方回合======================
+当前手牌：#+Character_Noelle+Character_Ningguang+Character_Lisa+Character_Keqing+Item_Tea+Normal_Geo
+ 敌方玩家:  使用了卡  #+Character_Lisa
+ 敌方 Character_Lisa 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+ 敌方玩家:  使用了卡  #+Character_Ningguang
+ 敌方 Character_Ningguang 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+=====================我的回合======================
+当前手牌：#+Character_Noelle+Character_Lisa+Item_Sunsettia+Item_Advice+Item_Teaport
+ 玩家:  使用了卡  #+Character_Lisa
+ 我方 Character_Lisa 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 玩家:  使用了卡  #+Item_Advice
+=====================对方回合======================
+当前手牌：#+Character_Noelle+Character_Keqing+Item_Tea+Normal_Geo+Normal_Geo+Normal_Defence
+ 敌方 Character_Lisa 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+ 敌方 Character_Ningguang 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+=====================我的回合======================
+当前手牌：#+Character_Noelle+Item_Sunsettia+Item_Teaport+Normal_Electro+Item_Chill+Item_Claymore+Normal_Attack
+ 我方 Character_Ningguang 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+=====================对方回合======================
+当前手牌：#+Character_Noelle+Character_Keqing+Item_Tea+Normal_Geo+Normal_Geo+Normal_Defence+Normal_Geo+Item_Advice
+ 敌方 Character_Ningguang 移动到 (-1, 0)
+ 敌方玩家:  使用了卡  #+FreeMove
+=====================我的回合======================
+当前手牌：#+Character_Noelle+Item_Sunsettia+Item_Teaport+Normal_Electro+Item_Chill+Item_Claymore+Normal_Attack+Normal_Defence
+ 我方 Character_Ningguang 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+=====================对方回合======================
+当前手牌：#+Character_Noelle+Character_Keqing+Item_Tea+Normal_Geo+Normal_Geo+Normal_Defence+Normal_Geo+Item_Advice
+ 敌方玩家:  使用了卡  #+Normal_Geo

@@ -157,13 +157,17 @@ public class Character : GameBase
         normalState.transform.localRotation = new Quaternion(0, 0, 0, 0);
         normalState.transform.localScale = new Vector3(0.15f, 0.25f, 1);
 
+        Sprite HpBar = BattleArea.sprites.Bar_Red;
+
+        if (parent!=null && parent.TryGetComponent(out Player player) && player.isPlayer) HpBar = BattleArea.sprites.Bar_Green;
+
         for (int i = 0; i < HP; i++)
         {
             GameObject obj = new GameObject();
             obj.transform.parent = normalState.transform;
             obj.transform.localScale = new Vector3(scale, 1, 1);
             obj.transform.localRotation = new Quaternion(0, 0, 0, 0);
-            obj.AddComponent<SpriteRenderer>().sprite = sprites.GetComponent<AllSprites>().Bar_Red;
+            obj.AddComponent<SpriteRenderer>().sprite = HpBar;
             obj.transform.localPosition = new Vector3((i+0.5f)*scale, 0);
         }
         for (int i = 0; i < shield; i++)
@@ -1334,7 +1338,7 @@ public class Hero : Character//可控制角色基类
 
     public static bool isPosiInitied=false;
 
-    public bool InitPos(){
+    public static bool InitPos(){
         if(isPosiInitied)return false;
         isPosiInitied=true;
         posAll = new Vector2Int[400];

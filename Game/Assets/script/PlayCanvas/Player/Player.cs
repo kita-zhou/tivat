@@ -87,6 +87,7 @@ public class Player : MonoBehaviour//玩家类
         objStatu.transform.localRotation = new Quaternion(0, 0, 0, 0);
         objStatu.AddComponent<SpriteRenderer>().sprite = sprites.GetComponent<AllSprites>().Statu[index];
         objStatu.transform.localPosition = new Vector3(-1, -0.15f);
+        //Massage.CreateMsg(stamina.ToString(), new Vector3(-1, -5, -10), gameObject,0.2f,-1);
     }
 
     public void DeleteState()
@@ -110,6 +111,7 @@ public class Player : MonoBehaviour//玩家类
         myCharacters = new Character[10];
         characterCount = 0;
         statueEnergy = 6;
+        stamina = 100;
         ShowState();
     }
 
@@ -1011,6 +1013,7 @@ public class Player : MonoBehaviour//玩家类
         rend.sprite = hero.appearance;
         obj.transform.localScale = new Vector3(1, 1, 1);
         obj.transform.localRotation = new Quaternion(0, 0, 0, 0);
+        if (!isPlayer) obj.transform.localRotation = new Quaternion(0,0,90,0);
         AddCharacter(obj);
         hero.ShowNormalState();
     }

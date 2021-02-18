@@ -16,14 +16,15 @@ public class Massage : MonoBehaviour
     {
         GameObject obj = new GameObject();
         obj.transform.parent = parent.transform;
-        Text text = obj.AddComponent<Text>();
+        MeshRenderer textrender = obj.AddComponent<MeshRenderer>();
+        TMPro.TextMeshPro text = obj.AddComponent<TMPro.TextMeshPro>();
         RectTransform rect = obj.GetComponent<RectTransform>();
         rect.sizeDelta = new Vector2(1000,100);
         text.text = msg;
-        text.font = GameObject.Find("Font/DengXian").GetComponent<Massage>().font;
+        //text.font = GameObject.Find("Font/DengXian").GetComponent<Massage>().font;
         text.color = new Color(1, 1, 1);
         text.fontSize = 35;
-        text.alignment = TextAnchor.MiddleCenter;
+        text.alignment = TMPro.TextAlignmentOptions.CenterGeoAligned;
         Massage massage = obj.AddComponent<Massage>();
         massage.liveTime = liveTime;
         

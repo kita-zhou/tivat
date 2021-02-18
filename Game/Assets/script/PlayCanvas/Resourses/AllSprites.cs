@@ -121,6 +121,7 @@ public class AllSprites : MonoBehaviour
     public Sprite Bar_Blue;
     public Sprite Bar_Yellow;
     public Sprite Bar_Blue_Light;
+    public Sprite Bar_Green;
 
     public Sprite Num_Red_Minus_1;
     public Sprite Num_Green_Add_1;

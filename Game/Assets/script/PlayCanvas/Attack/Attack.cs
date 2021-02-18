@@ -65,6 +65,7 @@ public class Attack : GameBase//攻击类
         if (dis.sqrMagnitude > 0.001)
         {//如果没到目的地，则运动
             transform.localPosition = Vector3.MoveTowards(transform.localPosition, tar, speed * Time.deltaTime);
+            //transform.localRotation = new Quaternion(0, 0, Mathf.Asin(dis.y/dis.magnitude), 0);
         }
         else
         {

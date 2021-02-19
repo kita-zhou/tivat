@@ -19,6 +19,16 @@ public class CardCombination : IComparable
         }
     }
     public List<CardName> cardstrings;
+
+    public bool AddCard(string card)
+    {
+        return AddCard((CardName)Enum.Parse(typeof(CardName), card));
+    }
+    public bool AddCard(CardName card)
+    {
+        cardstrings.Add(card);
+        return true;
+    }
     public override string ToString()
     {
         string strings = "#";

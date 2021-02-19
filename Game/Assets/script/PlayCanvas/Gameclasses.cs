@@ -10,6 +10,7 @@ using UnityEngine;
     public delegate bool UseFunc(Vector2Int Target);
     public delegate bool ComfirmUse();
     public delegate Vector2Int[] GetPos();
+public delegate bool GetNameFunc(out string str);
     public enum AttackType { NormalAttack,ChargedAttack, ElementalSkill, ElementalBurst, ElementalReaction};//普攻，重击，小技能，元素爆发，元素反应
     public enum ElementalReactionType { Frozen, Melt,Vaporize, ElectroCharged, Overloaded, SuperConduct,Burning,Swirl,Crystallize};//冻结，融化，蒸发，感电，超载，超导，燃烧，扩散，结晶
     public enum ElementType {Physics, Hydro,  Pyro, Electro, Cryo, Anemo, Geo, Dendro};//物理，水，火，雷，冰，风，岩，草
@@ -23,6 +24,11 @@ using UnityEngine;
         public GetPos TargetPos;
 
         public ComfirmUse CanUse;
+
+        public GetNameFunc GetName = (out string str) => {
+            str = null;
+            return false;
+        };
 
         public bool needTarget = true;
 

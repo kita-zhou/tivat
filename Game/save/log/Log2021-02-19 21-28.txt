@@ -1,0 +1,57 @@
+ 玩家:  使用了卡  #+Character_Keqing
+ 玩家:  使用了卡  #+Character_Ningguang
+ 玩家:  使用了卡  #+Character_Lisa
+ 玩家:  使用了卡  #+Character_Noelle
+ 我方 Character_Noelle 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 我方 Character_Noelle 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+=====================对方回合======================
+当前手牌：#+Character_Noelle+Character_Ningguang+Character_Lisa+Character_Keqing+Normal_Attack+Normal_Electro
+ 敌方玩家:  使用了卡  #+Character_Keqing
+ 敌方玩家:  使用了卡  #+Character_Lisa
+ 敌方玩家:  使用了卡  #+Character_Ningguang
+ 敌方玩家:  使用了卡  #+Character_Noelle
+=====================我的回合======================
+当前手牌：#+Item_Claymore+Normal_Electro+Normal_Geo
+=====================对方回合======================
+当前手牌：#+Normal_Attack+Normal_Electro+Normal_Attack+Normal_Geo
+=====================我的回合======================
+当前手牌：#+Item_Claymore+Normal_Electro+Normal_Geo+Normal_Attack+Item_Book
+友方 Character_Noelle 被动 恢复 1 护盾
+ 玩家:  使用了卡  #+Item_Book
+ 玩家:  使用了卡  #+Normal_Electro+Normal_Attack
+=====================对方回合======================
+当前手牌：#+Normal_Attack+Normal_Electro+Normal_Attack+Normal_Geo+Item_Book+Normal_Electro
+ 敌方 Character_Noelle 被动 恢复 1 护盾
+ 敌方玩家:  使用了卡  #+Normal_Attack+Normal_Electro
+ 敌方玩家:  使用了卡  #+Item_Book
+ 敌方玩家:  使用了卡  #+Normal_Electro
+=====================我的回合======================
+当前手牌：#+Item_Claymore+Normal_Electro+Normal_Geo+Normal_Electro+Normal_Electro+Item_Chill
+ 玩家:  使用了卡  #+Normal_Electro
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 我方 Character_Keqing 移动到 (1, 0)
+ 玩家:  使用了卡  #+FreeMove
+=====================对方回合======================
+当前手牌：#+Normal_Attack+Normal_Electro+Normal_Geo+Normal_Electro+Normal_Electro+Item_Clock
+ 敌方玩家:  使用了卡  #+Normal_Attack+Normal_Electro
+敌方 Character_Keqing(4,0) 使用 ElementalSkill 对 友方 Character_Keqing(3,0) 造成了 1 点 Electro 伤害
+ 敌方玩家:  使用了卡  #+Item_Clock
+ 敌方玩家:  使用了卡  #+Normal_Electro
+敌方 Character_Keqing(4,0) 使用 ChargedAttack 对 友方 Character_Keqing(2,0) 造成了 1 点 Electro 伤害
+ 敌方 Character_Lisa 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+ 敌方玩家:  使用了卡  #+Normal_Electro
+友方 Character_Keqing 死亡 
+敌方 Character_Lisa(4,0) 使用 NormalAttack 对 友方 Character_Keqing(0,0) 造成了 2 点 Electro 伤害
+=====================我的回合======================
+当前手牌：#+Item_Claymore+Normal_Electro+Normal_Geo+Normal_Electro+Item_Chill+Character_Keqing+Item_Clock+Item_Chill
+友方 Character_Noelle 被动 恢复 1 护盾
+ 玩家:  使用了卡  #+Character_Keqing
+ 玩家:  使用了卡  #+Item_Chill

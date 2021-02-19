@@ -235,25 +235,45 @@ public class Player : MonoBehaviour//玩家类
             UpdateCard();
             if (isCharacterSelected)//如果有角色被选中
             {
-                if (!selectedCharacter.UsingCardDic.TryGetValue(GetCardString(), out UseCard useclass))
+                if (selectedCharacter.UsingCardDic.TryGetValue(GetCardString(), out UseCard useclass))
                 {
-                    Debug.Log("卡牌搭配错误");
-                    ResetButtonDown();
-                    return;
+                    if (!useclass.CanUse())
+                    {
+                        ResetButtonDown();
+                        Debug.Log("当前无法使用该牌");
+                        return;
+                    }
+                    if (!useclass.needTarget)
+                    {
+                        Debug.Log("直接使用");
+                        UseCard(new Vector2Int(-1, -1));
+                        return;
+                    }
+                    ChangeUseCardPositionState(useclass, ButtonState.HighLight);
                 }
-                if (!useclass.CanUse())
+                else
                 {
-                    ResetButtonDown();
-                    Debug.Log("当前无法使用该牌");
-                    return;
+                    isCharacterSelected = false;
+                    if (!UsingCardDic.TryGetValue(GetCardString(), out useclass))
+                    {
+                        Debug.Log("卡牌搭配错误");
+                        ResetButtonDown();
+                        return;
+                    }
+                    if (!useclass.CanUse())
+                    {
+                        ResetButtonDown();
+                        Debug.Log("当前无法使用该牌");
+                        return;
+                    }
+                    if (!useclass.needTarget)
+                    {
+                        Debug.Log("直接使用");
+                        UseCard(new Vector2Int(-1, -1));
+                        return;
+                    }
+                    ChangeUseCardPositionState(useclass, ButtonState.HighLight);
                 }
-                if (!useclass.needTarget)
-                {
-                    Debug.Log("直接使用");
-                    UseCard(new Vector2Int(-1, -1));
-                    return;
-                }
-                ChangeUseCardPositionState(useclass, ButtonState.HighLight);
             }
             else//玩家用牌
             {
@@ -412,13 +432,12 @@ public class Player : MonoBehaviour//玩家类
         }
     }
 
-    public string GetCardString()//获取选择的卡牌的序列
+    public CardCombination GetCardString()//获取选择的卡牌的序列
     {
-        string str = "#";
+        CardCombination str = new CardCombination();
         for(int i = 0; i < cardCount; i++)
         {
-            str += "+";
-            str += selectedCard[i].name;
+            str.AddCard(selectedCard[i].name);
         }
         Debug.Log(str);
         return str;
@@ -625,6 +644,14 @@ public class Player : MonoBehaviour//玩家类
                     characterInfo.GetComponent<CharacterInfo>().show(selectEnemy);
                 }
             }
+            if(hand.TryGetComponent(out Hand ha))
+            {
+                if(ha.selectCount>0) UseButtonDown();
+            }
+            if (!isCharacterSelected && isTargeting)
+            {
+                AreaButtonDown(row, col);
+            }
         }
     }
     public void ChangeAttackAreaState(Character character, ButtonState state,bool isPlayer) {
@@ -828,6 +855,7 @@ public class Player : MonoBehaviour//玩家类
             Character.ElementalReactionFunc(hero, atk);
             Destroy(obj);
         }
+        hero.ShowNormalState();
         return true;
     }
 

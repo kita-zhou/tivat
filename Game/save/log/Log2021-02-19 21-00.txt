@@ -1,0 +1,67 @@
+=====================对方回合======================
+ 玩家:  使用了卡  #+Character_Keqing
+ 敌方玩家:  使用了卡  #+Character_Keqing
+ 玩家:  使用了卡  #+Character_Ningguang
+ 敌方玩家:  使用了卡  #+Character_Ningguang
+ 玩家:  使用了卡  #+Character_Lisa
+ 敌方玩家:  使用了卡  #+Character_Lisa
+ 玩家:  使用了卡  #+Character_Noelle
+ 敌方玩家:  使用了卡  #+Character_Noelle
+=====================对方回合======================
+当前手牌：#+Character_Noelle+Character_Ningguang+Character_Lisa+Character_Keqing+Normal_Attack+Item_Trap
+=====================我的回合======================
+当前手牌：#+Character_Noelle+Character_Ningguang+Character_Lisa+Character_Keqing+Normal_Attack+Item_Trap
+ 玩家:  使用了卡  #+Character_Lisa
+ 敌方玩家:  使用了卡  #+Character_Lisa
+ 玩家:  使用了卡  #+Character_Ningguang
+ 敌方玩家:  使用了卡  #+Character_Ningguang
+ 玩家:  使用了卡  #+Character_Keqing
+ 敌方玩家:  使用了卡  #+Character_Keqing
+ 玩家:  使用了卡  #+Character_Noelle
+ 敌方玩家:  使用了卡  #+Character_Noelle
+ 玩家:  使用了卡  #+Item_Trap
+ 敌方玩家:  使用了卡  #+Item_Trap
+ 我方 Character_Noelle 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 敌方 Character_Noelle 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+ 我方 Character_Noelle 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 敌方 Character_Noelle 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 敌方 Character_Keqing 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 敌方 Character_Keqing 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+=====================对方回合======================
+当前手牌：#+Normal_Geo+Normal_Electro+Normal_Electro
+=====================我的回合======================
+当前手牌：#+Normal_Geo+Normal_Electro+Normal_Electro
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 敌方 Character_Keqing 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 敌方 Character_Keqing 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+ 我方 Character_Lisa 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 敌方 Character_Lisa 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+=====================对方回合======================
+当前手牌：#+Normal_Attack+Item_CrystalCore+Normal_Attack
+=====================我的回合======================
+当前手牌：#+Normal_Attack+Item_CrystalCore+Normal_Attack
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 敌方 Character_Keqing 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+ 玩家:  使用了卡  #+Normal_Attack+Item_CrystalCore
+ 敌方玩家:  使用了卡  #+Normal_Attack+Item_CrystalCore
+友方 Character_Keqing(4,0) 使用 ElementalSkill 对 敌方 Character_Keqing(3,0) 造成了 1 点 Physics 伤害
+敌方 Character_Keqing(4,0) 使用 ElementalSkill 对 友方 Character_Keqing(3,0) 造成了 1 点 Physics 伤害

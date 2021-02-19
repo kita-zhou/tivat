@@ -1,0 +1,39 @@
+=====================对方回合======================
+ 玩家:  使用了卡  #+Character_Keqing
+ 敌方玩家:  使用了卡  #+Character_Keqing
+ 玩家:  使用了卡  #+Character_Ningguang
+ 敌方玩家:  使用了卡  #+Character_Ningguang
+ 玩家:  使用了卡  #+Character_Lisa
+ 敌方玩家:  使用了卡  #+Character_Lisa
+ 玩家:  使用了卡  #+Character_Noelle
+ 敌方玩家:  使用了卡  #+Character_Noelle
+=====================对方回合======================
+当前手牌：#+Character_Noelle+Character_Ningguang+Character_Lisa+Character_Keqing+Normal_Defence+Normal_Attack
+=====================我的回合======================
+当前手牌：#+Character_Noelle+Character_Ningguang+Character_Lisa+Character_Keqing+Normal_Defence+Normal_Attack
+ 玩家:  使用了卡  #+Character_Keqing
+ 敌方玩家:  使用了卡  #+Character_Keqing
+ 玩家:  使用了卡  #+Character_Ningguang
+ 敌方玩家:  使用了卡  #+Character_Ningguang
+ 玩家:  使用了卡  #+Character_Lisa
+ 敌方玩家:  使用了卡  #+Character_Lisa
+ 玩家:  使用了卡  #+Character_Noelle
+ 敌方玩家:  使用了卡  #+Character_Noelle
+=====================对方回合======================
+当前手牌：#+Normal_Geo+Normal_Geo+Normal_Attack
+=====================我的回合======================
+当前手牌：#+Normal_Geo+Normal_Geo+Normal_Attack
+=====================对方回合======================
+当前手牌：#+Normal_Defence+Normal_Attack+Item_Chill+Normal_Attack
+=====================我的回合======================
+当前手牌：#+Normal_Defence+Normal_Attack+Item_Chill+Normal_Attack
+ 玩家:  使用了卡  #+Item_Chill
+ 敌方玩家:  使用了卡  #+Item_Chill
+=====================对方回合======================
+当前手牌：#+Normal_Geo+Normal_Geo+Normal_Attack+Item_CrystalCore+Item_Claymore
+ 敌方 Character_Noelle 被动 恢复 1 护盾
+=====================我的回合======================
+当前手牌：#+Normal_Geo+Normal_Geo+Normal_Attack+Item_CrystalCore+Item_Claymore
+友方 Character_Noelle 被动 恢复 1 护盾
+ 玩家:  使用了卡  #+Normal_Attack
+ 敌方玩家:  使用了卡  #+Normal_Attack

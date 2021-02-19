@@ -12,7 +12,7 @@ public class Massage : MonoBehaviour
 
     public Font font;
 
-    public static GameObject CreateMsg(string msg, Vector3 localPos,GameObject parent, float scale = 0.01f,float liveTime = 0.5f)
+    public static GameObject CreateMsg(string msg, Vector3 localPos,GameObject parent ,float scale = 0.01f,float liveTime = 0.5f)
     {
         GameObject obj = new GameObject();
         obj.transform.parent = parent.transform;
@@ -33,7 +33,15 @@ public class Massage : MonoBehaviour
         obj.transform.localRotation = new Quaternion(0, 0, 0, 0);
         return obj;
     }
-
+    public static GameObject CreateMsg(string msg, Vector3 localPos, GameObject parent, Color color, float scale = 0.01f, float liveTime = 0.5f)
+    {
+        GameObject obj = CreateMsg(msg, localPos, parent, scale, liveTime);
+        if(obj.TryGetComponent<TMPro.TextMeshPro>(out var text))
+        {
+            text.color = color;
+        }
+        return obj;
+    }
     public static GameObject CreateMsg(Sprite img, Vector3 localPos, GameObject parent, float scale = 1, float liveTime = 0.5f)
     {
         GameObject obj = new GameObject();

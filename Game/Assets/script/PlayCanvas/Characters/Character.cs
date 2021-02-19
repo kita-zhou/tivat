@@ -57,8 +57,8 @@ public class Character : GameBase
         charge.postions = poses;
         charge.func = ChargedAttack;
 
-        UsingCardDic.Add("NormalAttack", normal);
-        UsingCardDic.Add("ChargedAttack", charge);
+        UsingCardDic.Add("#+NormalAttack", normal);
+        UsingCardDic.Add("#+ChargedAttack", charge);
 
         AddUseCard("#+FreeMove", FreeMove, posesMove, CanFreeMove);
     }
@@ -95,7 +95,7 @@ public class Character : GameBase
 
     public bool isTarget = true;//是否可被选中
 
-    public SortedDictionary<string, UseCard> UsingCardDic = new SortedDictionary<string, UseCard>();//使用卡牌时调用的函数
+    public SortedDictionary<CardCombination, UseCard> UsingCardDic = new SortedDictionary<CardCombination, UseCard>();//使用卡牌时调用的函数
 
     public SortedDictionary<string, DefEff> DefenceEffects = new SortedDictionary<string, DefEff>();//被攻击时的特效
     public SortedDictionary<string, AtkEff> AttackEffects =  new SortedDictionary<string, AtkEff>();//攻击时的特效
@@ -116,9 +116,14 @@ public class Character : GameBase
             CanUse=comfirm,
             needTarget = needTag
         };
-
-        UsingCardDic.Add(name, useCard);
-
+        if (UsingCardDic.ContainsKey(name))
+        {
+            UsingCardDic[name] = useCard;
+        }
+        else
+        {
+            UsingCardDic.Add(name, useCard);
+        }
     }
 
     public void AddUseCard(string name, UseFunc function, Vector2Int[] poses,bool needTag=true)
@@ -480,8 +485,9 @@ public class Character : GameBase
         shield += Shield;
         for(int i = 0; i < shield; i++)
         {
-            ShowImgDefault(sprites.GetComponent<AllSprites>().Num_Yellow_Add_1);
+            //ShowImgDefault(sprites.GetComponent<AllSprites>().Num_Yellow_Add_1);
         }
+        Massage.CreateMsg("+" + shield.ToString(), new Vector3(-0.3f, 0.4f, -10), gameObject, new Color(1, 0.8f, 0.5f), 0.1f);
         HP += Hp;
         if (HP > MAXHP)
         {
@@ -489,8 +495,9 @@ public class Character : GameBase
         }
         for (int i = 0; i < Hp; i++)
         {
-            ShowImgDefault(sprites.GetComponent<AllSprites>().Num_Green_Add_1);
+            //ShowImgDefault(sprites.GetComponent<AllSprites>().Num_Green_Add_1);
         }
+        Massage.CreateMsg("+" + Hp.ToString(), new Vector3(0.3f, 0.4f, -10), gameObject, new Color(0.6f, 1f, 0.5f), 0.1f);
         ShowNormalState();
     }//元素反应型治疗
 
@@ -503,8 +510,9 @@ public class Character : GameBase
         }
         for(int i = 0; i < damege; i++)
         {
-            ShowImgDefault(sprites.GetComponent<AllSprites>().Num_Red_Minus_1);
+            //ShowImgDefault(sprites.GetComponent<AllSprites>().Num_Red_Minus_1);
         }
+        Massage.CreateMsg("-" + damege.ToString(), new Vector3(0f, 0.4f, -10), gameObject, new Color(1f, 0.3f, 0.3f),0.1f);
         if (HP <= 0 && state!= CharacterState.Dead){
             state = CharacterState.Dead;
             DeathSettle();

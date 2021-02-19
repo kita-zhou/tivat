@@ -1,0 +1,28 @@
+ 玩家:  使用了卡  #+Character_Keqing
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 玩家:  使用了卡  #+Character_Lisa
+ 玩家:  使用了卡  #+Character_Ningguang
+ 玩家:  使用了卡  #+Character_Noelle
+=====================对方回合======================
+当前手牌：#+Character_Noelle+Character_Ningguang+Character_Lisa+Character_Keqing+Normal_Defence+Item_Teaport
+ 敌方玩家:  使用了卡  #+Character_Keqing
+ 敌方 Character_Keqing 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+ 敌方 Character_Keqing 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+ 敌方玩家:  使用了卡  #+Character_Lisa
+ 敌方玩家:  使用了卡  #+Character_Ningguang
+ 敌方玩家:  使用了卡  #+Character_Noelle
+=====================我的回合======================
+当前手牌：#+Normal_Defence+Normal_Electro+Item_Book
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+=====================对方回合======================
+当前手牌：#+Normal_Defence+Item_Teaport+Normal_Attack+Item_Sunsettia
+ 敌方玩家:  使用了卡  #+Normal_Attack
+敌方 Character_Keqing(4,0) 使用 NormalAttack 对 友方 Character_Keqing(3,0) 造成了 1 点 Physics 伤害

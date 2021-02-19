@@ -22435,6 +22435,7 @@ MonoBehaviour:
   Bar_Blue: {fileID: 21300000, guid: 7894040288d8a3e4db98d643beca29ed, type: 3}
   Bar_Yellow: {fileID: 21300000, guid: 4f6dc4f2bbbae454a89727230902f76a, type: 3}
   Bar_Blue_Light: {fileID: 21300000, guid: 7910b14d56400094eb38550e042a28b1, type: 3}
+  Bar_Green: {fileID: 21300000, guid: 7dec2d6cc1234b14db34c3e6d96a7805, type: 3}
   Num_Red_Minus_1: {fileID: 21300000, guid: 65d64e7e475a2384f8292d5b80fdf494, type: 3}
   Num_Green_Add_1: {fileID: 21300000, guid: fbb98a0f91c25d84da07356f5c2f8355, type: 3}
   Num_Yellow_Add_1: {fileID: 21300000, guid: 8d63dafd3cc113b45b415cdcb8e7a50e, type: 3}

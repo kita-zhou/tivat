@@ -1,0 +1,23 @@
+ 玩家:  使用了卡  #+Character_Keqing
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 玩家:  使用了卡  #+Item_Trap
+=====================对方回合======================
+当前手牌：#+Character_Noelle+Character_Ningguang+Character_Lisa+Character_Keqing+Normal_Attack+Normal_Defence
+ 敌方玩家:  使用了卡  #+Character_Keqing
+ 敌方 Character_Keqing 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+ 敌方 Character_Keqing 移动到 (0, 1)
+ 敌方玩家:  使用了卡  #+FreeMove
+=====================我的回合======================
+当前手牌：#+Character_Noelle+Character_Ningguang+Character_Lisa+Normal_Burst+Normal_Geo
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+ 我方 Character_Keqing 移动到 (0, 1)
+ 玩家:  使用了卡  #+FreeMove
+=====================对方回合======================
+当前手牌：#+Character_Noelle+Character_Ningguang+Character_Lisa+Normal_Attack+Normal_Defence+Normal_Electro+Item_Book
+ 敌方玩家:  使用了卡  #+Normal_Electro+Normal_Attack
+敌方 Character_Keqing(2,0) 使用 ElementalSkill 对 友方 Character_Keqing(3,0) 造成了 1 点 Electro 伤害

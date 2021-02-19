@@ -49,25 +49,25 @@ public class Noelle: Hero
         AddUseCard("#+Normal_Attack", NormalAttack, poses);
 
         AddUseCard("#+Normal_Attack+Normal_Defence", ChargedAttack, poses);
-        AddUseCard("#+Normal_Defence+Normal_Attack", ChargedAttack, poses);
+        //AddUseCard("#+Normal_Defence+Normal_Attack", ChargedAttack, poses);
 
         AddUseCard("#+Item_Claymore+Normal_Defence", ChargedAttack, poses);
-        AddUseCard("#+Item_Claymore+Normal_Attack", ChargedAttack, poses);
+        //AddUseCard("#+Item_Claymore+Normal_Attack", ChargedAttack, poses);
 
         AddUseCard("#+Normal_Attack+Item_Claymore", ChargedAttack, poses);
-        AddUseCard("#+Normal_Defence+Item_Claymore", ChargedAttack, poses);
+        //AddUseCard("#+Normal_Defence+Item_Claymore", ChargedAttack, poses);
 
         AddUseCard("#+Normal_Defence+Normal_Geo", Skill, posDontNeedTag,false);
-        AddUseCard("#+Normal_Geo+Normal_Defence", Skill, posDontNeedTag,false);
+        //AddUseCard("#+Normal_Geo+Normal_Defence", Skill, posDontNeedTag,false);
 
         AddUseCard("#+Item_CrystalCore+Normal_Defence", CrystalSkill, posDontNeedTag,false);
-        AddUseCard("#+Normal_Defence+Item_CrystalCore", CrystalSkill, posDontNeedTag,false);
+        //AddUseCard("#+Normal_Defence+Item_CrystalCore", CrystalSkill, posDontNeedTag,false);
 
         AddUseCard("#+Normal_Burst+Normal_Geo", Burst, posDontNeedTag,false);
-        AddUseCard("#+Normal_Geo+Normal_Burst", Burst, posDontNeedTag,false);
+        //AddUseCard("#+Normal_Geo+Normal_Burst", Burst, posDontNeedTag,false);
 
         AddUseCard("#+Item_CrystalCore+Normal_Burst", CrystalBurst, posDontNeedTag,false);
-        AddUseCard("#+Normal_Burst+Item_CrystalCore", CrystalBurst, posDontNeedTag,false);
+        //AddUseCard("#+Normal_Burst+Item_CrystalCore", CrystalBurst, posDontNeedTag,false);
 
         AddUseCard("#", BurstBonusAttack, posBurstBonus,CanUseVoid);
 

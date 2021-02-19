@@ -426,13 +426,13 @@ public class BattleArea : MonoBehaviour
     public void Defeat()
     {
         Send("AD");
-        ShowMessage("Defeat", new Vector3(4, 0, -1), new Color(1, 0.5f, 0), 0.6f, 2);
+        ShowMessage("Defeat", new Vector3(4, 0, -10), new Color(1, 0.5f, 0), 0.6f, 2);
         Invoke("ExitGame", 2);
     }
 
     public void Win()
     {
-        ShowMessage("Win", new Vector3(4, 0, -1), new Color(1,0.5f,0),0.6f, 2);
+        ShowMessage("Win", new Vector3(4, 0, -10), new Color(1,0.5f,0),0.6f, 2);
         Invoke("ExitGame", 2);
     }
 }//战斗区域类

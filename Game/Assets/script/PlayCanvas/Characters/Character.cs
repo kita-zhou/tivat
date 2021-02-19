@@ -483,19 +483,11 @@ public class Character : GameBase
     public virtual void SelfHeal(int Hp, int Shield)
     {
         shield += Shield;
-        for(int i = 0; i < shield; i++)
-        {
-            //ShowImgDefault(sprites.GetComponent<AllSprites>().Num_Yellow_Add_1);
-        }
         Massage.CreateMsg("+" + shield.ToString(), new Vector3(-0.3f, 0.4f, -10), gameObject, new Color(1, 0.8f, 0.5f), 0.1f);
         HP += Hp;
         if (HP > MAXHP)
         {
             HP = MAXHP;
-        }
-        for (int i = 0; i < Hp; i++)
-        {
-            //ShowImgDefault(sprites.GetComponent<AllSprites>().Num_Green_Add_1);
         }
         Massage.CreateMsg("+" + Hp.ToString(), new Vector3(0.3f, 0.4f, -10), gameObject, new Color(0.6f, 1f, 0.5f), 0.1f);
         ShowNormalState();
@@ -507,10 +499,6 @@ public class Character : GameBase
         {
             HP += shield;
             shield = 0;
-        }
-        for(int i = 0; i < damege; i++)
-        {
-            //ShowImgDefault(sprites.GetComponent<AllSprites>().Num_Red_Minus_1);
         }
         Massage.CreateMsg("-" + damege.ToString(), new Vector3(0f, 0.4f, -10), gameObject, new Color(1f, 0.3f, 0.3f),0.1f);
         if (HP <= 0 && state!= CharacterState.Dead){

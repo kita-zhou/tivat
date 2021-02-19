@@ -9,6 +9,7 @@ public enum CardType { Normal, Item, Reward, Character, Monster }//卡牌类型
 public enum CardName
 {
     Move,
+    FreeMove,
     NormalAttack,
     ChargedAttack,
     Run,
@@ -21,6 +22,7 @@ public enum CardName
     Character_Amber,
     Character_Lisa,
 
+    Normal_Move,
     Normal_Attack,
     Normal_Defence,
     Normal_Heal,

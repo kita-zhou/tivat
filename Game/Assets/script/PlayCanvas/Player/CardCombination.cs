@@ -7,23 +7,23 @@ public class CardCombination : IComparable
 {
     public CardCombination()
     {
-        cardstrings = new List<string>();
+        cardstrings = new List<CardName>();
     }
     public CardCombination(string cardstr)
     {
         string[] strings = cardstr.Split('+');
-        cardstrings = new List<string>();
+        cardstrings = new List<CardName>();
         for(int i = 1; i < strings.Length; i++)
         {
-            cardstrings.Add(strings[i]);
+            cardstrings.Add((CardName)Enum.Parse(typeof(CardName),strings[i]));
         }
     }
-    public List<string> cardstrings;
-
+    public List<CardName> cardstrings;
     public override string ToString()
     {
         string strings = "#";
-        cardstrings.ForEach(str => strings += "+" + str);
+        
+        cardstrings.ForEach(str => strings += "+" + str.ToString());
         return strings;
     }
 
@@ -47,7 +47,7 @@ public class CardCombination : IComparable
     public static bool operator == (CardCombination cards1, CardCombination cards2)
     {
         if (cards1.cardstrings.Count != cards2.cardstrings.Count) return false;
-        foreach(string cardstr in cards1.cardstrings)
+        foreach(CardName cardstr in cards1.cardstrings)
         {
             if (cards1.cardstrings.FindAll(t => (t == cardstr)).Count != cards2.cardstrings.FindAll(t => (t == cardstr)).Count) return false;
         }

@@ -61,17 +61,15 @@ public class Character : GameBase
         UsingCardDic.Add("#+ChargedAttack", charge);
 
         AddUseCard("#+FreeMove", FreeMove, posesMove, CanFreeMove);
+
+        Vector2Int[] posDontNeedTag = new Vector2Int[] { new Vector2Int(-1, -1) };
+        AddUseCard("#+Normal_Defence", SelfDefenceCard, posDontNeedTag, false);
+        AddUseCard("#+Normal_Heal", SelfHealCard, posDontNeedTag, false);
     }
 
     public virtual void InitStamina()//体力初始化,护盾衰减
     {
         stamina = MAXStamina;
-        if (shield > 0)
-        {
-            int reduce = shield / 2;
-            if (reduce == 0) reduce = 1;
-            shield -= reduce;
-        }
     }
     public AllAudio audios;
     public string characterName;//名字
@@ -153,12 +151,12 @@ public class Character : GameBase
     {
         if (normalState != null) DeleteNormalState();
 
-        float scale = 6.0f / (HP + shield);
+        float scale = 6.0f / ((MAXHP + shield)*0.85f+(MAXHP+shield)/10);
         if (scale > 1) scale = 1;
 
         normalState = new GameObject();
         normalState.transform.parent = transform;
-        normalState.transform.localPosition = new Vector3(-(0.35f + scale * 0.075f), -(0.4f), -3);
+        normalState.transform.localPosition = new Vector3(-(0.45f + scale * 0.075f), -(0.4f), -3);
         normalState.transform.localRotation = new Quaternion(0, 0, 0, 0);
         normalState.transform.localScale = new Vector3(0.15f, 0.25f, 1);
 
@@ -173,7 +171,7 @@ public class Character : GameBase
             obj.transform.localScale = new Vector3(scale, 1, 1);
             obj.transform.localRotation = new Quaternion(0, 0, 0, 0);
             obj.AddComponent<SpriteRenderer>().sprite = HpBar;
-            obj.transform.localPosition = new Vector3((i+0.5f)*scale, 0);
+            obj.transform.localPosition = new Vector3((i*0.85f+0.5f+i/10)*scale, 0);
         }
         for (int i = 0; i < shield; i++)
         {
@@ -182,7 +180,7 @@ public class Character : GameBase
             obj.transform.localScale = new Vector3(scale, 1, 1);
             obj.transform.localRotation = new Quaternion(0, 0, 0, 0);
             obj.AddComponent<SpriteRenderer>().sprite = sprites.GetComponent<AllSprites>().Bar_Yellow;
-            obj.transform.localPosition = new Vector3((i + HP+0.5f)*scale, 0);
+            obj.transform.localPosition = new Vector3((i*0.85f + HP*0.85f+0.5f+(i+HP)/10)*scale, 0);
         }
         
 
@@ -896,6 +894,22 @@ public class Character : GameBase
         return true;
     }
 
+    public virtual bool SelfDefenceCard(Vector2Int pos)
+    {
+        if (stamina < 1) return false;
+        stamina--;
+        SelfHeal(0, 10);
+        return true;
+    }
+
+    public virtual bool SelfHealCard(Vector2Int pos)
+    {
+        if (stamina < 1) return false;
+        stamina--;
+        SelfHeal(10, 0);
+        return true;
+    }
+
     public virtual bool Move(Vector2Int pos)
     {
         if (stamina < 1) return false;
@@ -1346,7 +1360,26 @@ public class Hero : Character//可控制角色基类
         return true;
     }
 
-
-
+    public GameObject mouseEnterInfo;
+    public virtual void CreateMouseEnterInfo()
+    {
+        if (mouseEnterInfo != null) Destroy(mouseEnterInfo);
+        mouseEnterInfo = new GameObject();
+        mouseEnterInfo.transform.parent = transform;
+        mouseEnterInfo.transform.localPosition = new Vector3(0f, 0.6f, -10f);
+        Massage.CreateMsg("<color=\"red\">"+HP.ToString()+"</color>-<color=\"yellow\">"+shield.ToString(), new Vector3(0, 0, 0), mouseEnterInfo, 1f, -1);
+    }
+    public virtual void DeleteMouseEnterInfo()
+    {
+        if (mouseEnterInfo != null) Destroy(mouseEnterInfo);
+    }
+    private void OnMouseEnter()
+    {
+        CreateMouseEnterInfo();
+    }
+    private void OnMouseExit()
+    {
+        DeleteMouseEnterInfo();
+    }
 
 }

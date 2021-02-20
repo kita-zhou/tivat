@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public enum GameState {Start, Match, Play }//未加入匹配/匹配/游戏中
 public class PlayCanvas : MonoBehaviour
 {
-    public string Version = "1001";
+    public static string Version = "-0.9.9";
 
     public GameObject player;
     public GameObject enemyPlayer;
@@ -498,7 +498,7 @@ public class PlayCanvas : MonoBehaviour
         filename = $"Log{System.DateTime.Now:yyyy-MM-dd HH-mm}.txt";
         if (!Directory.Exists(logpath))
             Directory.CreateDirectory(logpath);
-        Version = "1001";
+        Version = "-0.9.9";
         try
         {
             client = new FileSocket();

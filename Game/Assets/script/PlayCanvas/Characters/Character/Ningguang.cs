@@ -60,7 +60,7 @@ public class Ningguang : Hero
         if (Inited) return;
         Inited = true;
         Debug.Log("NingguangInit");
-        Initial("Character_Ningguang", 4, 1);
+        Initial("Character_Ningguang", 40, 1);
         /* sprites = GameObject.Find("Sprites");
          appearance = sprites.GetComponent<AllSprites>().characterAvatar_Ningguang;
          card = sprites.GetComponent<AllSprites>().characterCard_Ningguang;
@@ -128,7 +128,7 @@ public class Ningguang : Hero
         GameObject obj = CreatObject<Attack>(parent);
         obj.name = "Ningguang_Normal_Attack";
         Attack atk = obj.GetComponent<Attack>();
-        atk.Initial(pos, 1, AttackType.NormalAttack, ElementType.Geo, this);
+        atk.Initial(pos, 10, AttackType.NormalAttack, ElementType.Geo, this);
         atk.ChangeApprence(sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal);
         atk.activeSprite = sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal_Actived;
         stamina--;
@@ -154,7 +154,7 @@ public class Ningguang : Hero
         obj.name = "Ningguang_Charged_Attack";
         obj.transform.localScale = new Vector3(1.5f, 1.5f, 1);
         Attack atk = obj.GetComponent<Attack>();
-        atk.Initial(pos, 2, AttackType.ChargedAttack, ElementType.Geo, this);
+        atk.Initial(pos, 20, AttackType.ChargedAttack, ElementType.Geo, this);
         ChargeAttackLimit = 2;
         atk.ChangeApprence(sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal);
         atk.activeSprite = sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal_Actived;
@@ -203,7 +203,7 @@ public class Ningguang : Hero
             GameObject obj = CreatObject<Attack>(parent);
             Attack atk = obj.GetComponent<Attack>();
             Vector2Int posi = BattleArea.GetReverse(position);
-            atk.Initial(posi, 1, AttackType.ElementalBurst, ElementType.Geo, this);
+            atk.Initial(posi, 10, AttackType.ElementalBurst, ElementType.Geo, this);
             atk.ChangeApprence(sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal);
             atk.activeSprite = sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal_Actived;
         }
@@ -226,7 +226,7 @@ public class Ningguang : Hero
 
             GameObject obj = CreatObject<Attack>(parent);
             Attack atk = obj.GetComponent<Attack>();
-            atk.Initial(BattleArea.GetReverse(pos), 1, AttackType.NormalAttack, ElementType.Geo, this);
+            atk.Initial(BattleArea.GetReverse(pos), 10, AttackType.NormalAttack, ElementType.Geo, this);
             atk.ChangeApprence(sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal);
             atk.activeSprite = sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal_Actived;
         }
@@ -241,7 +241,7 @@ public class Ningguang : Hero
         pos += position;
         GameObject obj = CreatObject<Attack>(parent);
         Attack atk = obj.GetComponent<Attack>();
-        atk.Initial(pos, 1, AttackType.NormalAttack, ElementType.Physics, this);
+        atk.Initial(pos, 10, AttackType.NormalAttack, ElementType.Physics, this);
         atk.ChangeApprence(sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal);
         atk.activeSprite = sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal_Actived;
         stamina--;
@@ -259,7 +259,7 @@ public class Ningguang : Hero
         obj.name = "Ningguang_Charged_Attack";
         obj.transform.localScale = new Vector3(1.5f, 1.5f, 1);
         Attack atk = obj.GetComponent<Attack>();
-        atk.Initial(pos, 2, AttackType.ChargedAttack, ElementType.Physics, this);
+        atk.Initial(pos, 20, AttackType.ChargedAttack, ElementType.Physics, this);
         atk.ChangeApprence(sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal);
         atk.activeSprite = sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal_Actived;
         ChargeAttackLimit = 2;
@@ -304,7 +304,7 @@ public class Ningguang : Hero
             GameObject obj = CreatObject<Attack>(parent);
             Attack atk = obj.GetComponent<Attack>();
             Vector2Int posi = new Vector2Int(7 - position.x, 7 - position.y);
-            atk.Initial(posi, 1, AttackType.ElementalBurst, ElementType.Physics, this);
+            atk.Initial(posi, 10, AttackType.ElementalBurst, ElementType.Physics, this);
             atk.ChangeApprence(sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal);
             atk.activeSprite = sprites.GetComponent<AllSprites>().Attack_Ningguang_Normal_Actived;
         }

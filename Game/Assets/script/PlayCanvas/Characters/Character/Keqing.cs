@@ -10,7 +10,7 @@ public class Keqing : Hero
         Inited = true;
         MaxFreeMove = 2;
         FreeMoveCount = 2;
-        Initial("Character_Keqing", 4, 1);
+        Initial("Character_Keqing", 40, 1);
         heroType = HeroType.Sword;
         element = ElementType.Electro;
 
@@ -41,16 +41,16 @@ public class Keqing : Hero
         AddUseCard("#+Normal_Attack", NormalAttack, poses);
 
         AddUseCard("#+Normal_Attack+Normal_Electro", Skill, posSkill);
-        AddUseCard("#+Normal_Electro+Normal_Attack", Skill, posSkill);
+        //AddUseCard("#+Normal_Electro+Normal_Attack", Skill, posSkill);
 
         AddUseCard("#+Item_CrystalCore+Normal_Attack", CrystalSkill, posSkill);
-        AddUseCard("#+Normal_Attack+Item_CrystalCore", CrystalSkill, posSkill);
+       // AddUseCard("#+Normal_Attack+Item_CrystalCore", CrystalSkill, posSkill);
 
         AddUseCard("#+Normal_Burst+Normal_Electro", Burst, poses);
-        AddUseCard("#+Normal_Electro+Normal_Burst", Burst, poses);
+       // AddUseCard("#+Normal_Electro+Normal_Burst", Burst, poses);
 
         AddUseCard("#+Normal_Burst+Item_CrystalCore", CrystalBurst, poses);
-        AddUseCard("#+Item_CrystalCore+Normal_Burst", CrystalBurst, poses);
+       // AddUseCard("#+Item_CrystalCore+Normal_Burst", CrystalBurst, poses);
 
         AddUseCard("#+Normal_Electro", ActionBonus, poses,ElementCanUse);
 
@@ -79,7 +79,7 @@ public class Keqing : Hero
     public override bool NormalAttack(Vector2Int targ)
     {
         if (stamina < 1) return false;
-        CreateAttack(targ, 1, AttackType.NormalAttack, ElementType.Physics);
+        CreateAttack(targ, 10, AttackType.NormalAttack, ElementType.Physics);
         isAfterAction = true;
         ShowNormalState();
         stamina--;
@@ -103,11 +103,11 @@ public class Keqing : Hero
         Vector2 dis = pos;
         dis.Normalize();
         transform.localPosition = BattleArea.GetLocalPosition(targ)- new Vector3( dis.x*0.5f,dis.y*0.5f);
-        CreateAttack(new Vector2Int(1, 0), 1, AttackType.ElementalSkill, ElementType.Electro);
-        CreateAttack(new Vector2Int(-1, 0), 1, AttackType.ElementalSkill, ElementType.Electro);
-        CreateAttack(new Vector2Int(0, 1), 1, AttackType.ElementalSkill, ElementType.Electro);
-        CreateAttack(new Vector2Int(0, -1), 1, AttackType.ElementalSkill, ElementType.Electro);
-        CreateAttack(new Vector2Int(0, 0), 1, AttackType.ElementalSkill, ElementType.Electro);
+        CreateAttack(new Vector2Int(1, 0), 10, AttackType.ElementalSkill, ElementType.Electro);
+        CreateAttack(new Vector2Int(-1, 0), 10, AttackType.ElementalSkill, ElementType.Electro);
+        CreateAttack(new Vector2Int(0, 1), 10, AttackType.ElementalSkill, ElementType.Electro);
+        CreateAttack(new Vector2Int(0, -1), 10, AttackType.ElementalSkill, ElementType.Electro);
+        CreateAttack(new Vector2Int(0, 0), 10, AttackType.ElementalSkill, ElementType.Electro);
         isAfterAction = true;
         ShowNormalState();
         gameObject.GetComponent<AudioSource>().PlayOneShot(audios.Keqing_Skill);
@@ -123,11 +123,11 @@ public class Keqing : Hero
         Vector2 dis = pos;
         dis.Normalize();
         transform.localPosition = BattleArea.GetLocalPosition(targ) - new Vector3(dis.x * 0.5f, dis.y * 0.5f);
-        CreateAttack(new Vector2Int(1, 0), 1, AttackType.ElementalSkill, ElementType.Physics);
-        CreateAttack(new Vector2Int(-1, 0), 1, AttackType.ElementalSkill, ElementType.Physics);
-        CreateAttack(new Vector2Int(0, 1), 1, AttackType.ElementalSkill, ElementType.Physics);
-        CreateAttack(new Vector2Int(0, -1), 1, AttackType.ElementalSkill, ElementType.Physics);
-        CreateAttack(new Vector2Int(0, 0), 1, AttackType.ElementalSkill, ElementType.Physics);
+        CreateAttack(new Vector2Int(1, 0), 10, AttackType.ElementalSkill, ElementType.Physics);
+        CreateAttack(new Vector2Int(-1, 0), 10, AttackType.ElementalSkill, ElementType.Physics);
+        CreateAttack(new Vector2Int(0, 1), 10, AttackType.ElementalSkill, ElementType.Physics);
+        CreateAttack(new Vector2Int(0, -1), 10, AttackType.ElementalSkill, ElementType.Physics);
+        CreateAttack(new Vector2Int(0, 0), 10, AttackType.ElementalSkill, ElementType.Physics);
         isAfterAction = true;
         ShowNormalState();
         gameObject.GetComponent<AudioSource>().PlayOneShot(audios.Keqing_Skill);
@@ -147,7 +147,7 @@ public class Keqing : Hero
         {
             for(int j = -1; j < 2; j++)
             {
-                CreateAttack(new Vector2Int(j, i), 1, AttackType.ElementalBurst, ElementType.Electro);
+                CreateAttack(new Vector2Int(j, i), 10, AttackType.ElementalBurst, ElementType.Electro);
             }
         }
         gameObject.GetComponent<AudioSource>().PlayOneShot(audios.Keqing_Burst);
@@ -165,7 +165,7 @@ public class Keqing : Hero
         {
             for (int j = -1; j < 2; j++)
             {
-                CreateAttack(new Vector2Int(j, i), 1, AttackType.ElementalBurst, ElementType.Physics);
+                CreateAttack(new Vector2Int(j, i), 10, AttackType.ElementalBurst, ElementType.Physics);
             }
         }
         gameObject.GetComponent<AudioSource>().PlayOneShot(audios.Keqing_Burst);
@@ -184,7 +184,7 @@ public class Keqing : Hero
             {
                 for (int j = -1; j < 2; j++)
                 {
-                    CreateAttack(new Vector2Int(j, i), 1, AttackType.ElementalBurst, ElementType.Electro);
+                    CreateAttack(new Vector2Int(j, i), 10, AttackType.ElementalBurst, ElementType.Electro);
                 }
             }
         }
@@ -195,7 +195,7 @@ public class Keqing : Hero
         if (!isAfterAction) return false;
         isAfterAction = false;
         ShowNormalState();
-        CreateAttack(pos, 1, AttackType.ChargedAttack, ElementType.Electro);
+        CreateAttack(pos, 10, AttackType.ChargedAttack, ElementType.Electro);
         return true;
     }
 
@@ -203,7 +203,7 @@ public class Keqing : Hero
     {
         if (!isAfterAction) return false;
         isAfterAction = false;
-        CreateAttack(pos, 1, AttackType.ChargedAttack, ElementType.Physics);
+        CreateAttack(pos, 10, AttackType.ChargedAttack, ElementType.Physics);
         return true;
     }
 

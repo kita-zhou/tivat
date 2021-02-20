@@ -11,7 +11,7 @@ public class Noelle: Hero
         Inited = true;
         MaxFreeMove = 2;
         FreeMoveCount = 2;
-        Initial("Character_Noelle", 4, 2);
+        Initial("Character_Noelle", 40, 2);
         heroType = HeroType.Claymore;
         element = ElementType.Geo;
 
@@ -87,7 +87,7 @@ public class Noelle: Hero
             else
             {
                 ShieldEmptyCount=0;
-                SelfHeal(0, 1);
+                SelfHeal(0, 10);
                 if(parent.TryGetComponent(out Player player))
                 {
                     string log = "";
@@ -108,7 +108,7 @@ public class Noelle: Hero
     public override bool NormalAttack(Vector2Int targ)
     {
         if (stamina < 1) return false;
-        CreateAttack(targ, 1, AttackType.NormalAttack, ElementType.Physics);
+        CreateAttack(targ, 10, AttackType.NormalAttack, ElementType.Physics);
         stamina--;
         return true;
     }
@@ -116,7 +116,7 @@ public class Noelle: Hero
     public override bool ChargedAttack(Vector2Int targ)
     {
         if (stamina < 1) return false;
-        CreateAttack(targ, 1+shield, AttackType.ChargedAttack, ElementType.Physics);
+        CreateAttack(targ, 10+shield, AttackType.ChargedAttack, ElementType.Physics);
         stamina--;
         return true;
     }
@@ -125,7 +125,7 @@ public class Noelle: Hero
     public bool Skill(Vector2Int pos)
     {
         if (stamina < 1) return false;
-        SelfHeal(0, 1);
+        SelfHeal(0, 10);
         SkillBonus = true;
         ShowNormalState();
         stamina--;
@@ -139,7 +139,7 @@ public class Noelle: Hero
     }
 
     public bool CanReach(Character character,Vector2Int[] poses) {
-        Vector2Int dis = new Vector2Int(7, 7) - character.position - position;
+        Vector2Int dis =  BattleArea.GetReverse( character.position) - position;
         foreach(Vector2Int pos in poses)
         {
             if (pos == dis) return true;
@@ -170,13 +170,13 @@ public class Noelle: Hero
             if (shield == 0) return;
             for(int i = 0; i < parent.GetComponent<Player>().characterCount; i++)
             {
-                parent.GetComponent<Player>().myCharacters[i].SelfHeal(1, 0);
+                parent.GetComponent<Player>().myCharacters[i].SelfHeal(10, 0);
             }
             int count = CanReach(parent.GetComponent<Player>().GetEnemyCharacters(), out Character[] canReach, poses);
             if (count > 0)
             {
                 int index = Random.Range(0, count);
-                CreateAttack(new Vector2Int(7, 7) - canReach[index].position - position, 1, AttackType.ElementalSkill, ElementType.Geo);
+                CreateAttack(BattleArea.GetReverse(canReach[index].position) - position, 10, AttackType.ElementalSkill, ElementType.Geo);
             }
         }
     }
@@ -225,7 +225,7 @@ public class Noelle: Hero
     public bool BurstBonusAttack(Vector2Int pos)
     {
         if (BurstBonus < 1) return false;
-        CreateAttack(pos, 1+shield, AttackType.ElementalBurst, ElementType.Geo);
+        CreateAttack(pos, 10+shield, AttackType.ElementalBurst, ElementType.Geo);
         BurstBonus--;
         ShowNormalState();
         return true;

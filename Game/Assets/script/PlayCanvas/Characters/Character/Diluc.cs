@@ -8,7 +8,7 @@ public class Diluc : Hero
     {
         if (Inited) return;
         Inited = true;
-        Initial("Character_Diluc", 5, 1);
+        Initial("Character_Diluc", 50, 1);
         MaxFreeMove = 2;
         FreeMoveCount = 2;
         heroType = HeroType.Claymore;
@@ -85,17 +85,17 @@ public class Diluc : Hero
     {
         if (stamina < 1) return false;
 
-        int damage = 1;
+        int damage = 10;
         if(PyroUsedCount >= 3)
         {
-            damage++;
+            damage+=10;
             PyroUsedCount = 0;
         }
         ElementType elementType = ElementType.Physics;
         if (BurstBonusCount > 0)
         {
             elementType = ElementType.Pyro;
-            damage++;
+            damage+=10;
         }
         CreateAttack(pos, damage,  AttackType.NormalAttack, elementType);
         AttackUsedCount++;
@@ -107,10 +107,10 @@ public class Diluc : Hero
     public bool ChargeAttack(Vector2Int pos)
     {
         if (stamina < 1) return false;
-        int damage = 2;
+        int damage = 20;
         if (PyroUsedCount >= 3)
         {
-            damage++;
+            damage+=10;
             PyroUsedCount = 0;
         }
 
@@ -118,7 +118,7 @@ public class Diluc : Hero
         if (BurstBonusCount > 0)
         {
             elementType = ElementType.Pyro;
-            damage++;
+            damage+=10;
         }
 
         CreateAttack(pos, damage, AttackType.ChargedAttack, elementType);
@@ -146,10 +146,10 @@ public class Diluc : Hero
     public bool Skill(Vector2Int pos)
     {
         if (stamina < 1) return false;
-        int damage = 2;
+        int damage = 20;
         if (AttackUsedCount >= 3)
         {
-            damage++;
+            damage+=10;
             AttackUsedCount = 0;
         }
         CreateAttack(pos, damage, AttackType.ElementalSkill, ElementType.Pyro);
@@ -166,10 +166,10 @@ public class Diluc : Hero
     public bool CrystalSkill(Vector2Int pos)
     {
         if (stamina < 1) return false;
-        int damage = 2;
+        int damage = 20;
         if (AttackUsedCount >= 3)
         {
-            damage++;
+            damage+=10;
             AttackUsedCount = 0;
         }
         CreateAttack(pos, damage, AttackType.ElementalSkill, ElementType.Physics);
@@ -191,7 +191,7 @@ public class Diluc : Hero
     {
         if (SkillBonusCount < 1) return false;
         SkillBonusCount--;
-        CreateAttack(SkillBonusPos - position, 1, AttackType.ElementalSkill, ElementType.Pyro);
+        CreateAttack(SkillBonusPos - position, 10, AttackType.ElementalSkill, ElementType.Pyro);
         PyroUsedCount++;
         ShowNormalState();
         return true;
@@ -202,7 +202,7 @@ public class Diluc : Hero
         if (SkillBonusCount < 1) return false;
         SkillBonusCount--;
         ShowNormalState();
-        CreateAttack(SkillBonusPos - position, 1, AttackType.ElementalSkill, ElementType.Physics);
+        CreateAttack(SkillBonusPos - position, 10, AttackType.ElementalSkill, ElementType.Physics);
         return true;
     }
 
@@ -244,10 +244,10 @@ public class Diluc : Hero
     public bool Burst(Vector2Int pos)
     {
         if (stamina < 1) return false;
-        int damage = 2;
+        int damage = 20;
         if (AttackUsedCount >= 3)
         {
-            damage++;
+            damage+=10;
             AttackUsedCount = 0;
         }
         for(int i = 1; i < 4; i++)
@@ -263,10 +263,10 @@ public class Diluc : Hero
     public bool CrystalBurst(Vector2Int pos)
     {
         if (stamina < 1) return false;
-        int damage = 2;
+        int damage = 20;
         if (AttackUsedCount >= 3)
         {
-            damage++;
+            damage+=10;
             AttackUsedCount = 0;
         }
         for (int i = 1; i < 4; i++) 

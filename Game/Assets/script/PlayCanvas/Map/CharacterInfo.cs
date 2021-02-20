@@ -28,12 +28,12 @@ public class CharacterInfo : MonoBehaviour
 
     public void ShowState(int blood, int sheild, int stamina , ElementalAffect affect)
     {
-        float scale = 6.0f / (blood + sheild);
+        float scale = 6.0f / ((blood + sheild)*0.85f + (blood + sheild)/10);
         if (scale > 1) scale = 1;
         if (State != null) DeleteState();
         State = new GameObject();
         State.transform.parent = transform;
-        State.transform.localPosition = new Vector3(-(0.5f + scale * 0.1f), -(1.4f), 0);
+        State.transform.localPosition = new Vector3(-(0.7f), -(1.4f), 0);
         State.transform.localRotation = new Quaternion(0, 0, 0, 0);
         State.transform.localScale = new Vector3(0.2f, 0.2f, 1);
         for(int i = 0; i < blood; i++)
@@ -43,7 +43,7 @@ public class CharacterInfo : MonoBehaviour
             obj.transform.localScale = new Vector3(scale, 1, 1);
             obj.transform.localRotation = new Quaternion(0, 0, 0, 0);
             obj.AddComponent<SpriteRenderer>().sprite = AllSprites.GetComponent<AllSprites>().Bar_Red;
-            obj.transform.localPosition = new Vector3((i+0.5f)*scale, 0);
+            obj.transform.localPosition = new Vector3((i * 0.85f + 0.5f + i / 10) * scale, 0);
         }
         for(int i = 0; i < sheild; i++)
         {
@@ -52,16 +52,17 @@ public class CharacterInfo : MonoBehaviour
             obj.transform.localScale = new Vector3(scale, 1, 1);
             obj.transform.localRotation = new Quaternion(0, 0, 0, 0);
             obj.AddComponent<SpriteRenderer>().sprite = AllSprites.GetComponent<AllSprites>().Bar_Yellow;
-            obj.transform.localPosition = new Vector3((i+blood+0.5f)*scale, 0);
+            obj.transform.localPosition = new Vector3((i * 0.85f + blood*0.85f + 0.5f + ((i + blood) / 10)) * scale, 0);
         }
-        for(int i = 0; i < stamina; i++)
+        Massage.CreateMsg("<color=\"red\">" + blood.ToString() + "</color>-<color=\"yellow\">" + sheild.ToString(), new Vector3(6.8f, 0, 0), State, 0.2f, -1);
+        for (int i = 0; i < stamina; i++)
         {
             GameObject obj = new GameObject();
             obj.transform.parent = State.transform;
             obj.transform.localScale = new Vector3(1, 1, 1);
             obj.transform.localRotation = new Quaternion(0, 0, 0, 0);
             obj.AddComponent<SpriteRenderer>().sprite = AllSprites.GetComponent<AllSprites>().Bar_Blue;
-            obj.transform.localPosition = new Vector3(i+0.5f*scale, -0.5f);
+            obj.transform.localPosition = new Vector3(i+0.5f, -0.5f);
         }
 
         if(affect!=null && affect.affectElemental!= ElementType.Physics)

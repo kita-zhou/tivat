@@ -31,12 +31,12 @@ public class AmberBurst : Creator
     public void newRound()
     {
         remainTime--;
-        ShowNormalState();
         amber.BurstBurn(burnPos);
         if (remainTime < 1)
         {
             amber.DestroyBurstBurn();
         }
+        ShowNormalState();
     }
 
     public string StringGet()

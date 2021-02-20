@@ -1,0 +1,6 @@
+ 玩家:  使用了卡  #+Character_Amber
+=====================对方回合======================
+当前手牌：#+Character_Noelle+Character_Lisa+Character_Keqing+Character_Amber+Item_Tea+Normal_Attack
+=====================我的回合======================
+当前手牌：#+Character_Noelle+Character_Lisa+Character_Keqing+Normal_Burst+Normal_Geo+Normal_Defence
+ 玩家:  使用了卡  #+Normal_Defence

@@ -8,7 +8,7 @@ public class Lisa : Hero
     {
         if (Inited) return;
         Inited = true;
-        Initial("Character_Lisa", 4, 1);
+        Initial("Character_Lisa", 40, 1);
         poses = posMage;
         heroType = HeroType.Mage;
         element = ElementType.Electro;
@@ -49,37 +49,37 @@ public class Lisa : Hero
         AddUseCard("#+Item_CrystalCore", CrystalNormal, poses);
 
         AddUseCard("#+Normal_Attack+Normal_Electro", ChargedAttack, poses);
-        AddUseCard("#+Normal_Electro+Normal_Attack", ChargedAttack, poses);
+       // AddUseCard("#+Normal_Electro+Normal_Attack", ChargedAttack, poses);
 
         AddUseCard("#+Normal_Attack+Item_CrystalCore", CrystalCharged, poses);
-        AddUseCard("#+Item_CrystalCore+Normal_Attack", CrystalCharged, poses);
+        //AddUseCard("#+Item_CrystalCore+Normal_Attack", CrystalCharged, poses);
 
         AddUseCard("#+Normal_Electro+Normal_Electro", Skill, posdontneedtarg,false);
         
         AddUseCard("#+Normal_Electro+Item_CrystalCore", CrystalSkill, posdontneedtarg, false);
-        AddUseCard("#+Item_CrystalCore+Normal_Electro", CrystalSkill, posdontneedtarg, false);
+        //AddUseCard("#+Item_CrystalCore+Normal_Electro", CrystalSkill, posdontneedtarg, false);
 
         AddUseCard("#+Item_CrystalCore+Item_CrystalCore", CrystalSkill, posdontneedtarg, false);
 
         AddUseCard("#+Normal_Burst+Normal_Electro", Burst, poses);
-        AddUseCard("#+Normal_Electro+Normal_Burst", Burst, poses);
+        //AddUseCard("#+Normal_Electro+Normal_Burst", Burst, poses);
 
         AddUseCard("#+Normal_Burst+Item_CrystalCore", CrystalBurst, poses);
-        AddUseCard("#+Item_CrystalCore+Normal_Burst", CrystalBurst, poses);
+        //AddUseCard("#+Item_CrystalCore+Normal_Burst", CrystalBurst, poses);
     }
 
     public void CheckIsElectroAffect(Attack atk)
     {
         if(atk.attackOwner == this && atk.attackTarget.affected !=null && atk.attackTarget.affected.affectElemental == ElementType.Electro)
         {
-            atk.Damage++;
+            atk.Damage+=10;
         }
     }
 
     public override bool NormalAttack(Vector2Int pos)
     {
         if (stamina < 1) return false;
-        CreateAttack(pos, 1, AttackType.NormalAttack, ElementType.Electro);
+        CreateAttack(pos, 10, AttackType.NormalAttack, ElementType.Electro);
         stamina--;
         return true;
     }
@@ -87,7 +87,7 @@ public class Lisa : Hero
     public bool CrystalNormal(Vector2Int pos)
     {
         if (stamina < 1) return false;
-        CreateAttack(pos, 1, AttackType.NormalAttack, ElementType.Physics);
+        CreateAttack(pos, 10, AttackType.NormalAttack, ElementType.Physics);
         stamina--;
         return true;
     }
@@ -103,7 +103,7 @@ public class Lisa : Hero
             foreach(Character character in characters)
             {
                 Vector2Int tpos =BattleArea.GetReverse( character.position);
-                if ((tpos - pos).sqrMagnitude <= 2.4f  && (tpos - pos).sqrMagnitude>0.2f)
+                if ((tpos - pos).sqrMagnitude <2.9f  && (tpos - pos).sqrMagnitude>0.2f)
                 {
                     getPos = true;
                     targ = tpos;
@@ -112,7 +112,7 @@ public class Lisa : Hero
             }
             if (getPos)
             {
-                Attack.CreateAttack(parent, targ, 1, AttackType.NormalAttack, ElementType.Electro, this).transform.localPosition = atk.transform.localPosition;
+                Attack.CreateAttack(parent, targ, 10, AttackType.NormalAttack, ElementType.Electro, this).transform.localPosition = atk.transform.localPosition;
             }
         }
     }
@@ -120,7 +120,7 @@ public class Lisa : Hero
     public override bool ChargedAttack(Vector2Int targ)
     {
         if (stamina < 1) return false;
-        CreateAttack(targ, 2, AttackType.ChargedAttack, ElementType.Electro);
+        CreateAttack(targ, 20, AttackType.ChargedAttack, ElementType.Electro);
         stamina--;
         return true;
     }
@@ -128,7 +128,7 @@ public class Lisa : Hero
     public bool CrystalCharged(Vector2Int targ)
     {
         if (stamina < 1) return false;
-        CreateAttack(targ, 2, AttackType.ChargedAttack, ElementType.Physics);
+        CreateAttack(targ, 20, AttackType.ChargedAttack, ElementType.Physics);
         stamina--;
         return true;
     }
@@ -142,7 +142,7 @@ public class Lisa : Hero
         {
             for(int j = Abs(i) - 3; j < 4 - Abs(i); j++)
             {
-                CreateAttack(new Vector2Int(j, i), 1, AttackType.ElementalSkill, ElementType.Electro);
+                CreateAttack(new Vector2Int(j, i), 10, AttackType.ElementalSkill, ElementType.Electro);
             }
         }
         gameObject.GetComponent<AudioSource>().PlayOneShot(audios.Lisa_Skill);
@@ -158,7 +158,7 @@ public class Lisa : Hero
         {
             for (int j = Abs(i)-3; j < 4 - Abs(i); j++)
             {
-                CreateAttack(new Vector2Int(j, i), 1, AttackType.ElementalSkill, ElementType.Physics);
+                CreateAttack(new Vector2Int(j, i), 10, AttackType.ElementalSkill, ElementType.Physics);
             }
         }
         gameObject.GetComponent<AudioSource>().PlayOneShot(audios.Lisa_Skill);

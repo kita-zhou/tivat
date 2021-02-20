@@ -8,7 +8,7 @@ public class Amber : Hero
     {
         if (Inited) return;
         Inited = true;
-        Initial("Character_Amber", 4, 1);
+        Initial("Character_Amber", 40, 1);
 
         heroType = HeroType.Bow;
         element = ElementType.Pyro;
@@ -44,40 +44,40 @@ public class Amber : Hero
         AddUseCard("#+Item_Bow", BowNormal, posAll);
 
         AddUseCard("#+Normal_Attack+Normal_Pyro", ChargeAttack, posAll);
-        AddUseCard("#+Normal_Pyro+Normal_Attack", ChargeAttack, posAll);
+        //AddUseCard("#+Normal_Pyro+Normal_Attack", ChargeAttack, posAll);
 
         AddUseCard("#+Item_Bow+Normal_Pyro", BowCharge, posAll);
-        AddUseCard("#+Normal_Pyro+Item_Bow", BowCharge, posAll);
+        //AddUseCard("#+Normal_Pyro+Item_Bow", BowCharge, posAll);
 
         AddUseCard("#+Normal_Attack+Item_Chill", ChargeAttack, posAll);
-        AddUseCard("#+Item_Chill+Normal_Attack", ChargeAttack, posAll);
+        //AddUseCard("#+Item_Chill+Normal_Attack", ChargeAttack, posAll);
 
         AddUseCard("#+Item_Bow+Item_Chill", BowCharge, posAll);
-        AddUseCard("#+Item_Chill+Item_Bow", BowCharge, posAll);
+        //AddUseCard("#+Item_Chill+Item_Bow", BowCharge, posAll);
 
         AddUseCard("#+Normal_Attack+Item_CrystalCore", CrystalCharge, posAll);
-        AddUseCard("#+Item_CrystalCore+Normal_Attack", CrystalCharge, posAll);
+        //AddUseCard("#+Item_CrystalCore+Normal_Attack", CrystalCharge, posAll);
 
         AddUseCard("#+Item_Bow+Item_CrystalCore", BowCrystalCharge, posAll);
-        AddUseCard("#+Item_CrystalCore+Item_Bow", BowCrystalCharge, posAll);
+        //AddUseCard("#+Item_CrystalCore+Item_Bow", BowCrystalCharge, posAll);
 
         AddUseCard("#+Normal_Pyro+Normal_Defence", RabbitCreate, poses);
-        AddUseCard("#+Normal_Defence+Normal_Pyro", RabbitCreate, poses);
+        //AddUseCard("#+Normal_Defence+Normal_Pyro", RabbitCreate, poses);
 
         AddUseCard("#+Item_Chill+Normal_Defence", RabbitCreate, poses);
-        AddUseCard("#+Normal_Defence+Item_Chill", RabbitCreate, poses);
+        //ddUseCard("#+Normal_Defence+Item_Chill", RabbitCreate, poses);
 
         AddUseCard("#+Normal_Defence+Item_CrystalCore", CrystalSkill, poses);
-        AddUseCard("#+Item_CrystalCore+Normal_Defence", CrystalSkill, poses);
+        //AddUseCard("#+Item_CrystalCore+Normal_Defence", CrystalSkill, poses);
 
         AddUseCard("#+Normal_Burst+Normal_Pyro", Burst, poses);
-        AddUseCard("#+Normal_Pyro+Normal_Burst", Burst, poses);
+        //AddUseCard("#+Normal_Pyro+Normal_Burst", Burst, poses);
 
         AddUseCard("#+Normal_Burst+Item_Chill", Burst, poses);
-        AddUseCard("#+Item_Chill+Normal_Burst", Burst, poses);
+        //AddUseCard("#+Item_Chill+Normal_Burst", Burst, poses);
 
         AddUseCard("#+Normal_Burst+Item_CrystalCore", CrystalBurst, poses);
-        AddUseCard("#+Item_CrystalCore+Normal_Burst", CrystalBurst, poses);
+        //AddUseCard("#+Item_CrystalCore+Normal_Burst", CrystalBurst, poses);
 
         AddUseCard("#+Normal_Move", Move, posesMove,CanMove);
 
@@ -163,7 +163,7 @@ public class Amber : Hero
             return false;
         }
         
-        CreateAttack(pos, 1, AttackType.NormalAttack, ElementType.Physics);
+        CreateAttack(pos, 10, AttackType.NormalAttack, ElementType.Physics);
 
         stamina--;
         return true;
@@ -176,7 +176,7 @@ public class Amber : Hero
         {
             return false;
         }
-        CreateAttack(pos, 2, AttackType.ChargedAttack, ElementType.Pyro);
+        CreateAttack(pos, 20, AttackType.ChargedAttack, ElementType.Pyro);
         stamina--;
         return true;
     }
@@ -222,7 +222,7 @@ public class Amber : Hero
             {
                 GameObject obj = CreatObject<Attack>(parent);
                 Attack atk = obj.GetComponent<Attack>();
-                atk.Initial(new Vector2Int(i, j) + pos, 1, AttackType.ElementalBurst, ElementType.Pyro, this);
+                atk.Initial(new Vector2Int(i, j) + pos, 10, AttackType.ElementalBurst, ElementType.Pyro, this);
                 atk.transform.position = BattleArea.GetLocalPosition(pos);
             }
         }
@@ -234,7 +234,7 @@ public class Amber : Hero
         {
             return false;
         }
-        CreateAttack(pos, 2, AttackType.ChargedAttack, ElementType.Physics);
+        CreateAttack(pos, 20, AttackType.ChargedAttack, ElementType.Physics);
         stamina--;
         return true;
     }
@@ -256,7 +256,7 @@ public class Amber : Hero
             return false;
         }
 
-        CreateAttack(pos, 2, AttackType.NormalAttack, ElementType.Physics);
+        CreateAttack(pos, 20, AttackType.NormalAttack, ElementType.Physics);
 
         stamina--;
         return true;
@@ -268,7 +268,7 @@ public class Amber : Hero
         {
             return false;
         }
-        CreateAttack(pos, 3, AttackType.ChargedAttack, ElementType.Pyro);
+        CreateAttack(pos, 30, AttackType.ChargedAttack, ElementType.Pyro);
         stamina--;
         return true;
     }
@@ -279,7 +279,7 @@ public class Amber : Hero
         {
             return false;
         }
-        CreateAttack(pos, 3, AttackType.ChargedAttack, ElementType.Physics);
+        CreateAttack(pos, 30, AttackType.ChargedAttack, ElementType.Physics);
         stamina--;
         return true;
     }

@@ -6,8 +6,8 @@ public class Rose : Creator
 {
     public void Init()
     {
-        blood = 4;
-        MaxBlood = 4;
+        blood = 40;
+        MaxBlood = 40;
         remainTime = 5;
         MaxRemainTine = 5;
     }
@@ -55,7 +55,7 @@ public class Rose : Creator
                 }
             }
         }
-        Attack.CreateAttack(parent, BattleArea.GetReverse( cha.position), 1, AttackType.ElementalBurst, ElementType.Electro, lisa).transform.localPosition = transform.localPosition;
+        Attack.CreateAttack(parent, BattleArea.GetReverse( cha.position), 10, AttackType.ElementalBurst, ElementType.Electro, lisa).transform.localPosition = transform.localPosition;
         ShowNormalState();
     }
 

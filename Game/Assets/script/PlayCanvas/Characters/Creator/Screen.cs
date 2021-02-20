@@ -6,8 +6,8 @@ public class Screen : Creator
 { 
     public void Init()
     {
-        blood = 2;
-        MaxBlood = 2;
+        blood = 20;
+        MaxBlood = 20;
         remainTime = 2;
         MaxRemainTine = 2;
     }
@@ -31,7 +31,7 @@ public class Screen : Creator
                 {
                     if (character.shield < character.MAXShield)
                     {
-                        character.SelfHeal(0, 1);
+                        character.SelfHeal(0, 10);
                         break;
                     }
                 }

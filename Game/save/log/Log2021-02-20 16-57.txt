@@ -1,0 +1,4 @@
+ 玩家:  使用了卡  #+Character_Amber
+ 玩家:  使用了卡  #+Character_Lisa
+ 玩家:  使用了卡  #+Character_Keqing
+ 玩家:  使用了卡  #+Character_Noelle

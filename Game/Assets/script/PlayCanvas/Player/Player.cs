@@ -671,8 +671,8 @@ public class Player : MonoBehaviour//玩家类
 
     public void InitUseCard()
     {
-        Vector2Int[] Poses = new Vector2Int[20];
-        for(int i =1; i < 3; i++)
+        Vector2Int[] Poses = new Vector2Int[30];
+        for(int i =1; i < 4; i++)
         {
             for(int j = 1; j < 11; j++)
             {

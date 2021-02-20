@@ -67,7 +67,10 @@ public class CardCombination : IComparable
     {
         return !(cards1==cards2);
     }
-
+    public override bool Equals(object obj)
+    {
+        return this == obj as CardCombination;
+    }
     int CompareTo(CardCombination cards)
     {
         if (this == cards) return 0;

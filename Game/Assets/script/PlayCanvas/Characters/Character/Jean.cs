@@ -14,7 +14,7 @@ public class Jean : Hero
     {
         if (Inited) return;
         Inited = true;
-        Initial("Character_Jean",6,0);
+        Initial("Character_Jean",60,0);
         MaxFreeMove = 2;
         FreeMoveCount = 2;
         heroType = HeroType.Sword;
@@ -49,19 +49,19 @@ public class Jean : Hero
         AddUseCard("#+Normal_Attack", NormalAttack, poseNormal);
 
         AddUseCard("#+Normal_Attack+Normal_Heal", ChargeAttack, poseNormal);
-        AddUseCard("#+Normal_Heal+Normal_Attack", ChargeAttack, poseNormal);
+        //AddUseCard("#+Normal_Heal+Normal_Attack", ChargeAttack, poseNormal);
 
         AddUseCard("#+Normal_Attack+Normal_Anemo", Skill, poseNormal);
-        AddUseCard("#+Normal_Anemo+Normal_Attack", Skill, poseNormal);
+        //AddUseCard("#+Normal_Anemo+Normal_Attack", Skill, poseNormal);
 
         AddUseCard("#+Normal_Attack+Item_CrystalCore", CrystalSkill, poseNormal);
-        AddUseCard("#+Item_CrystalCore+Normal_Attack", CrystalSkill, poseNormal);
+        //AddUseCard("#+Item_CrystalCore+Normal_Attack", CrystalSkill, poseNormal);
 
         AddUseCard("#+Normal_Burst+Normal_Anemo", Burst, poseDontNeedTarg,false);
-        AddUseCard("#+Normal_Anemo+Normal_Burst", Burst, poseDontNeedTarg,false);
+        //AddUseCard("#+Normal_Anemo+Normal_Burst", Burst, poseDontNeedTarg,false);
 
         AddUseCard("#+Normal_Burst+Item_CrystalCore", CrystalBurst, poseDontNeedTarg,false);
-        AddUseCard("#+Item_CrystalCore+Normal_Burst", CrystalBurst, poseDontNeedTarg,false);
+        //AddUseCard("#+Item_CrystalCore+Normal_Burst", CrystalBurst, poseDontNeedTarg,false);
 
         AddUseCard("#+Normal_Move", Move, posesMove);
 
@@ -80,7 +80,7 @@ public class Jean : Hero
         pos += position;
         GameObject obj = CreatObject<Attack>(parent);
         Attack atk = obj.GetComponent<Attack>();
-        atk.Initial(pos, 1, AttackType.NormalAttack, ElementType.Physics, this);
+        atk.Initial(pos, 10, AttackType.NormalAttack, ElementType.Physics, this);
         
         stamina--;
         return true;
@@ -95,7 +95,7 @@ public class Jean : Hero
         pos += position;
         GameObject obj = CreatObject<Attack>(parent);
         Attack atk = obj.GetComponent<Attack>();
-        atk.Initial(pos, 1, AttackType.ChargedAttack, ElementType.Physics, this);
+        atk.Initial(pos, 10, AttackType.ChargedAttack, ElementType.Physics, this);
         SelfHeal(1, 0);
         stamina--;
         return true;
@@ -107,7 +107,7 @@ public class Jean : Hero
         {
             return false;
         }
-        CreateAttack(pos, 2, AttackType.ElementalSkill, ElementType.Anemo);
+        CreateAttack(pos, 20, AttackType.ElementalSkill, ElementType.Anemo);
         stamina--;
         return true;
     }
@@ -118,7 +118,7 @@ public class Jean : Hero
         {
             return false;
         }
-        CreateAttack(pos, 2, AttackType.ElementalSkill, ElementType.Physics);
+        CreateAttack(pos, 20, AttackType.ElementalSkill, ElementType.Physics);
         stamina--;
         return true;
     }
@@ -144,11 +144,11 @@ public class Jean : Hero
             {
                 GameObject obj = CreatObject<Attack>(parent);
                 Attack atk = obj.GetComponent<Attack>();
-                atk.Initial(new Vector2Int(i,j)+pos, 1, AttackType.ElementalBurst, ElementType.Anemo, this);
+                atk.Initial(new Vector2Int(i,j)+pos, 10, AttackType.ElementalBurst, ElementType.Anemo, this);
                 
                 GameObject obj2 = CreatObject<Heal>(parent);
                 Heal heal = obj2.GetComponent<Heal>();
-                heal.Initial(new Vector2Int(i, j) + pos, 1, 0, HealType.Jean_Burst, this);
+                heal.Initial(new Vector2Int(i, j) + pos, 10, 0, HealType.Jean_Burst, this);
             }
         }
         gameObject.GetComponent<AudioSource>().PlayOneShot(audios.Jean_Burst);
@@ -169,11 +169,11 @@ public class Jean : Hero
             {
                 GameObject obj = CreatObject<Attack>(parent);
                 Attack atk = obj.GetComponent<Attack>();
-                atk.Initial(new Vector2Int(i, j) + pos, 1, AttackType.ElementalBurst, ElementType.Physics, this);
+                atk.Initial(new Vector2Int(i, j) + pos, 10, AttackType.ElementalBurst, ElementType.Physics, this);
 
                 GameObject obj2 = CreatObject<Heal>(parent);
                 Heal heal = obj2.GetComponent<Heal>();
-                heal.Initial(new Vector2Int(i, j) + pos, 1, 0, HealType.Jean_Burst, this);
+                heal.Initial(new Vector2Int(i, j) + pos, 10, 0, HealType.Jean_Burst, this);
             }
         }
         gameObject.GetComponent<AudioSource>().PlayOneShot(audios.Jean_Burst);
@@ -218,7 +218,7 @@ public class Jean : Hero
             }
         }
         if (used) return;
-        base.SelfHeal(Hp, Shield);
+        base.SelfHeal(Hp, 0);
     }
 
 

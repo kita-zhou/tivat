@@ -1,0 +1,7 @@
+=====================对方回合======================
+ 玩家:  使用了卡  #+Character_Amber
+ 敌方玩家:  使用了卡  #+Character_Amber
+ 玩家:  使用了卡  #+Character_Keqing
+ 敌方玩家:  使用了卡  #+Character_Keqing
+ 玩家:  使用了卡  #+Character_Noelle
+ 敌方玩家:  使用了卡  #+Character_Noelle

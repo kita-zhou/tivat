@@ -41,7 +41,7 @@ public class Rabbit : GameBase
             {
                 GameObject obj = CreatObject<Attack>(parent);
                 Attack atk = obj.GetComponent<Attack>();
-                atk.Initial(new Vector2Int(i,j)+ position, 2, AttackType.ElementalSkill, ElementType.Pyro, amber);
+                atk.Initial(new Vector2Int(i,j)+ position, 20, AttackType.ElementalSkill, ElementType.Pyro, amber);
                 atk.transform.localPosition = BattleArea.GetLocalPosition(position);
             }
         }
